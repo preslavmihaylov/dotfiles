@@ -15,6 +15,9 @@ set autoindent
 " tab uses spaces
 " set expandtab
 
+" toggle paste modes in insert mode
+set pastetoggle=<F3>
+
 " switch tabs using Ctrl+[Left/Right]
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
