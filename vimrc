@@ -34,3 +34,12 @@ autocmd BufWritePre *.c,*.h :call <SID>StripTrailingWhitespaces()
 " switch tabs using Ctrl+[Left/Right]
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+
+set tags=tags;
+
+" map tag pop
+nnoremap <C-w> <C-t>
+
+" map tag expand
+nnoremap <C-e> :exec("tag ".expand("<cword>"))<CR>
+
