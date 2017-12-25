@@ -52,9 +52,15 @@ nnoremap <C-Right> :tabnext<CR>
 
 set tags=tags;
 
+" map scroll up
+nnoremap <C-a> <C-u>
+
+" map scroll down
+nnoremap <C-d> <C-d>
+
 " map tag pop
-nnoremap <C-w> <C-t>
+nnoremap <C-s> <C-t>
 
 " map tag expand
-nnoremap <C-e> :exec("tag ".expand("<cword>"))<CR>
+nnoremap <C-w> :exec("tag ".expand("<cword>"))<CR>
 
