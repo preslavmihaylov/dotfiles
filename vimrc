@@ -7,6 +7,21 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
+" start pathogen plugin manager
+execute pathogen#infect()
+
+" syntastic options
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" run vimrc from local directory
+set exrc
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Show line numbers
 set number
