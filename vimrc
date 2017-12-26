@@ -15,13 +15,20 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" start NERDTree automatically on startup
+" autocmd vimenter * NERDTree
+
 " run vimrc from local directory
 set exrc
 
+" Syntastic config
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" nerd tree opens files in different tabs
+" let g:NERDTreeMapOpenInTab='<ENTER>'
 
 " Show line numbers
 set number
@@ -50,7 +57,11 @@ autocmd BufWritePre *.c,*.h :call <SID>StripTrailingWhitespaces()
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
+" enable ctags
 set tags=tags;
+
+" map switch windows
+nnoremap <Tab> <C-w>w
 
 " map scroll up
 nnoremap <C-a> <C-u>
@@ -64,3 +75,5 @@ nnoremap <C-s> <C-t>
 " map tag expand
 nnoremap <C-w> :exec("tag ".expand("<cword>"))<CR>
 
+" map toggling nerd tree
+nnoremap <C-p> :NERDTreeToggle<CR>
