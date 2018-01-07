@@ -1,4 +1,7 @@
 """ -------------------- VIM CONFIG -------------------------
+
+runtime ftplugin/man.vim
+
 " Show line numbers
 set number
 
