@@ -84,6 +84,10 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-z> :undo<CR>
 nnoremap <C-u> :redo<CR>
 
+" map moving tabs
+nnoremap <C-Up> :tabm<CR>
+nnoremap <C-Down> :tabm 0<CR>
+
 " map switch windows
 nnoremap <Tab> <C-w>w
 
