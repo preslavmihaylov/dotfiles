@@ -71,6 +71,8 @@ let g:ctrlp_show_hidden=1
 " start NERDTree automatically on startup
 " autocmd vimenter * NERDTree
 
+let g:NERDTreeWinSize=50
+
 """ -------------------- CTags CONFIG -------------------------
 " enable ctags
 set tags=tags;
