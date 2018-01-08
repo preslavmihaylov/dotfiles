@@ -2,6 +2,10 @@
 
 runtime ftplugin/man.vim
 
+" show tabs as >---
+:set listchars=tab:>-
+:set list
+
 " Show line numbers
 set number
 
@@ -73,9 +77,28 @@ let g:ctrlp_show_hidden=1
 
 let g:NERDTreeWinSize=50
 
+" if NERDTreeTab is open --> NERDTreeToggle, else NERDTreeFind
+function! OpenNERDTree()
+	if exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+		NERDTreeToggle
+	else
+		" finds currently open file in NERDTree
+		NERDTreeFind
+	endif
+endfunction
+
+" map toggling nerd tree
+nnoremap <C-p> :call OpenNERDTree()<CR>
+
 """ -------------------- CTags CONFIG -------------------------
 " enable ctags
 set tags=tags;
+
+" map tag pop
+nnoremap <C-a> <C-t>
+
+" map tag expand
+nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
 
 """ -------------------- MAPPINGS -------------------------
 " switch tabs using Ctrl+[Left/Right]
@@ -99,11 +122,3 @@ nnoremap <C-w> <C-u>
 " map scroll down
 nnoremap <C-s> <C-d>
 
-" map tag pop
-nnoremap <C-a> <C-t>
-
-" map tag expand
-nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
-
-" map toggling nerd tree
-nnoremap <C-p> :NERDTreeToggle<CR>
