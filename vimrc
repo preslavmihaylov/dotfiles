@@ -40,12 +40,15 @@ endfun
 " remove trailing spaces on save
 autocmd BufWritePre *.c,*.h :call <SID>StripTrailingWhitespaces()
 
+" run vimrc from local directory
+set exrc
+
+" custom command for performing search in all source files
+command -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
+
 """ -------------------- Pathogen CONFIG -------------------------
 " start pathogen plugin manager
 execute pathogen#infect()
-
-" run vimrc from local directory
-set exrc
 
 """ -------------------- syntastic CONFIG -------------------------
 set statusline+=%#warningmsg#
@@ -131,5 +134,5 @@ nnoremap <A-Left> :vertical resize-5<CR>
 nnoremap <A-Up> :resize+5<CR>
 nnoremap <A-Down> :resize-5<CR>
 
-" custom command for performing search in all source files
-command -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
+" map searching for symbol in all file
+nnoremap <F2> :exec("Search ".expand("<cword>"))<CR>
