@@ -130,3 +130,6 @@ nnoremap <A-Right> :vertical resize+5<CR>
 nnoremap <A-Left> :vertical resize-5<CR>
 nnoremap <A-Up> :resize+5<CR>
 nnoremap <A-Down> :resize-5<CR>
+
+" custom command for performing search in all source files
+command -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
