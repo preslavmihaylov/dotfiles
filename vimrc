@@ -27,7 +27,7 @@ set autoindent
 " set expandtab
 
 " toggle paste modes in insert mode
-set pastetoggle=<F3>
+set pastetoggle=<F4>
 
 " remove trailing whitespace from lines and preserve cursor position
 function! <SID>StripTrailingWhitespaces()
@@ -38,13 +38,13 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 " remove trailing spaces on save
-autocmd BufWritePre *.c,*.h :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " run vimrc from local directory
 set exrc
 
 " custom command for performing search in all source files
-command -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
+command! -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
 
 """ -------------------- Pathogen CONFIG -------------------------
 " start pathogen plugin manager
@@ -85,12 +85,12 @@ let g:NERDTreeWinSize=50
 
 " if NERDTreeTab is open --> NERDTreeToggle, else NERDTreeFind
 function! OpenNERDTree()
-	if exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-		NERDTreeToggle
-	else
-		" finds currently open file in NERDTree
-		NERDTreeFind
-	endif
+    if exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+        NERDTreeToggle
+    else
+        " finds currently open file in NERDTree
+        NERDTreeFind
+    endif
 endfunction
 
 " map toggling nerd tree
@@ -105,6 +105,32 @@ nnoremap <C-a> <C-t>
 
 " map tag expand
 nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
+
+""" -------------------- CScope CONFIG -------------------------
+if has('cscope')
+    set cscopetag cscopeverbose
+
+    if has('quickfix')
+        set cscopequickfix=s-,c-,d-,i-,t-,e-
+    endif
+
+    cnoreabbrev csa cs add
+    cnoreabbrev csf cs find
+    cnoreabbrev csk cs kill
+    cnoreabbrev csr cs reset
+    cnoreabbrev css cs show
+    cnoreabbrev csh cs help
+
+    " add cscope db at start of vim
+    exec 'cs add $CSCOPE_SRC/cscope.out'
+
+    " map refreshing cscope db
+    nnoremap <F12> <ESC>:cs kill -1<CR>
+        \ :!cscope-rebuild.sh<CR>
+        \ :cs add $CSCOPE_SRC/cscope.out<CR>
+
+    nnoremap <F3> :exec("cs find s ".expand("<cword>"))<CR>:copen<CR>
+endif
 
 """ -------------------- MAPPINGS -------------------------
 " switch tabs using Ctrl+[Left/Right]
