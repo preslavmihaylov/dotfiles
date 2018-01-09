@@ -24,7 +24,7 @@ set shiftwidth=4
 set autoindent
 
 " tab uses spaces
-" set expandtab
+set expandtab
 
 " toggle paste modes in insert mode
 set pastetoggle=<F4>
@@ -65,7 +65,7 @@ let g:syntastic_check_on_wq = 0
 let g:ctrlp_map='<c-f>'
 
 " override default command for exiting ctrl-p prompt
-let g:ctrlp_prompt_mappings = { 'PrtExit()': ['<c-f>', '<c-c>'], 
+let g:ctrlp_prompt_mappings = { 'PrtExit()': ['<c-f>', '<c-c>'],
 	\ 'ToggleType(1)': ['c-down>']  }
 
 " ctrl-p search directory is CWD
@@ -122,6 +122,7 @@ if has('cscope')
     cnoreabbrev csh cs help
 
     " add cscope db at start of vim
+    exec ':!cscope-rebuild.sh'
     exec 'cs add $CSCOPE_SRC/cscope.out'
 
     " map refreshing cscope db
