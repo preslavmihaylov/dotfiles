@@ -9,6 +9,9 @@ runtime ftplugin/man.vim
 " Show line numbers
 set number
 
+" display title of current file in terminal title bar
+set title
+
 " Highlight search results
 set hlsearch
 
@@ -122,3 +125,8 @@ nnoremap <C-w> <C-u>
 " map scroll down
 nnoremap <C-s> <C-d>
 
+" map resizing buffers
+nnoremap <A-Right> :vertical resize+5<CR>
+nnoremap <A-Left> :vertical resize-5<CR>
+nnoremap <A-Up> :resize+5<CR>
+nnoremap <A-Down> :resize-5<CR>
