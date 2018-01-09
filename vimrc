@@ -26,6 +26,12 @@ set autoindent
 " tab uses spaces
 set expandtab
 
+" case insensitive search
+set ignorecase
+
+" Always show tab line
+set showtabline=2
+
 " toggle paste modes in insert mode
 set pastetoggle=<F4>
 
@@ -131,6 +137,8 @@ if has('cscope')
         \ :cs add $CSCOPE_SRC/cscope.out<CR>
 
     nnoremap <F3> :exec("cs find s ".expand("<cword>"))<CR>:copen<CR>
+    nnoremap <C-k> :cprev<CR>
+    nnoremap <C-l> :cnext<CR>
 endif
 
 """ -------------------- MAPPINGS -------------------------
@@ -163,3 +171,6 @@ nnoremap <A-Down> :resize-5<CR>
 
 " map searching for symbol in all file
 nnoremap <F2> :exec("Search ".expand("<cword>"))<CR>
+
+" go to mark 'm' (I use that as default). Set it by clicking 'mm'
+nnoremap <C-q> :'m<CR>
