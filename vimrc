@@ -2,6 +2,12 @@
 
 runtime ftplugin/man.vim
 
+set makeprg=make
+
+" highlight column 110
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
 " show tabs as >---
 :set listchars=tab:>-
 :set list
