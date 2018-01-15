@@ -1,0 +1,7 @@
+flake8      >= 2.0
+pep8-naming >= 0.4.1
+nose        >= 1.3.0
+# WebTest 2.0.24 dropped support of Python 2.6
+WebTest     >= 2.0.0, < 2.0.24
+PyHamcrest  >= 1.8.0
+requests    >= 2.8.1

@@ -1,0 +1,15 @@
+[submodule "vendor/waitress"]
+	path = vendor/waitress
+	url = https://github.com/Pylons/waitress
+[submodule "vendor/jedi"]
+	path = vendor/jedi
+	url = https://github.com/davidhalter/jedi
+[submodule "vendor/bottle"]
+	path = vendor/bottle
+	url = https://github.com/bottlepy/bottle
+[submodule "vendor/argparse"]
+	path = vendor/argparse
+	url = https://github.com/bewest/argparse
+[submodule "vendor/parso"]
+	path = vendor/parso
+	url = https://github.com/davidhalter/parso.git
