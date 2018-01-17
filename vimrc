@@ -1,7 +1,9 @@
 """ -------------------- VIM CONFIG -------------------------
 
+" enable Man command in vim
 runtime ftplugin/man.vim
 
+" run make from within vim by using command make
 set makeprg=make
 
 " highlight column 110
@@ -61,6 +63,11 @@ command! -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
 """ -------------------- Pathogen CONFIG -------------------------
 " start pathogen plugin manager
 execute pathogen#infect()
+
+""" -------------------- YouCompleteMe CONFIG -------------------------
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+"let g:ycm_auto_trigger = 0
+"let g:ycm_key_invoke_completion = '<C-Space>'
 
 """ -------------------- syntastic CONFIG -------------------------
 set statusline+=%#warningmsg#
