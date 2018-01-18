@@ -143,10 +143,6 @@ if has('cscope')
     cnoreabbrev css cs show
     cnoreabbrev csh cs help
 
-    " add cscope db at start of vim
-    exec ':!cscope-rebuild.sh'
-    exec 'cs add $CSCOPE_SRC/cscope.out'
-
     " map refreshing cscope db
     nnoremap <F12> <ESC>:cs kill -1<CR>
         \ :!cscope-rebuild.sh<CR>
