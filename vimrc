@@ -3,6 +3,9 @@
 " enable Man command in vim
 runtime ftplugin/man.vim
 
+" change default vim colorscheme
+:colorscheme ron
+
 " run make from within vim by using command make
 set makeprg=make
 
