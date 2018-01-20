@@ -1,2 +1,0 @@
-make clean html SPHINXBUILD=../env26/bin/sphinx-build
-

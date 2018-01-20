@@ -1,1 +1,0 @@
-raise Exception( 'Exception raised' )

@@ -1,6 +1,0 @@
-Found 5 candidates:
-  func MethodMe() bool
-  func MethodYou() bool
-  var A int
-  var B int
-  var C int
