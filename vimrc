@@ -1,4 +1,5 @@
 """ -------------------- VIM CONFIG -------------------------
+:set term=xterm-256color
 
 " enable Man command in vim
 runtime ftplugin/man.vim
