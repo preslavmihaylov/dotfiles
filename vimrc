@@ -1,5 +1,9 @@
 """ -------------------- VIM CONFIG -------------------------
-:set term=xterm-256color
+" Integrate vim with tmux
+set term=xterm-256color
+
+" Search moves to matched string while typing
+set incsearch
 
 " enable Man command in vim
 runtime ftplugin/man.vim
@@ -15,8 +19,8 @@ set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
 " show tabs as >---
-:set listchars=tab:>-
-:set list
+set listchars=tab:>-
+set list
 
 " Show line numbers
 set number
