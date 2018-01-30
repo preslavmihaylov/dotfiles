@@ -5,6 +5,9 @@ set term=xterm-256color
 " Search moves to matched string while typing
 set incsearch
 
+" Update file when updated from outside
+set autoread
+
 " enable Man command in vim
 runtime ftplugin/man.vim
 
