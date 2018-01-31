@@ -2,6 +2,12 @@
 " Integrate vim with tmux
 set term=xterm-256color
 
+" Always show status line
+set laststatus=2
+
+" Format status line to show CWD and line/column
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
 " Search moves to matched string while typing
 set incsearch
 
