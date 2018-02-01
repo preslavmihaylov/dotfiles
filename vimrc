@@ -114,6 +114,9 @@ let g:ctrlp_show_hidden=1
 " nerd tree opens files in different tabs
 " let g:NERDTreeMapOpenInTab='<ENTER>'
 
+" nerd tree position is right
+let g:NERDTreeWinPos = "right"
+
 " start NERDTree automatically on startup
 " autocmd vimenter * NERDTree
 
