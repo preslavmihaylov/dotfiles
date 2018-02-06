@@ -11,6 +11,9 @@ set mouse=a
 " Format status line to show CWD and line/column
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
+" reload file if changed when changing buffers
+au FocusGained,BufEnter * :checktime
+
 " Search moves to matched string while typing
 set incsearch
 
@@ -116,9 +119,6 @@ let g:ctrlp_show_hidden=1
 """ -------------------- NERDTree CONFIG -------------------------
 " nerd tree opens files in different tabs
 " let g:NERDTreeMapOpenInTab='<ENTER>'
-
-" nerd tree position is right
-let g:NERDTreeWinPos = "right"
 
 " start NERDTree automatically on startup
 " autocmd vimenter * NERDTree
