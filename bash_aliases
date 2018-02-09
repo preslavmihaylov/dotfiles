@@ -3,6 +3,7 @@
 stty -ixon
 
 alias targz_extract="tar -xvf"
+alias vi=vim
 
 # Add all my scripts to path
 PATH=$PATH:~/scripts
