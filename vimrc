@@ -1,5 +1,9 @@
 """ -------------------- VIM CONFIG -------------------------
-:set term=xterm-256color
+" Integrate vim with tmux
+set term=xterm-256color
+
+" Search moves to matched string while typing
+set incsearch
 
 " enable Man command in vim
 runtime ftplugin/man.vim
@@ -15,8 +19,8 @@ set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
 " show tabs as >---
-:set listchars=tab:>-
-:set list
+set listchars=tab:>-
+set list
 
 " Show line numbers
 set number
@@ -68,6 +72,11 @@ command! -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
 " start pathogen plugin manager
 execute pathogen#infect()
 
+""" -------------------- incsearch.vim CONFIG -------------------------
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 """ -------------------- YouCompleteMe CONFIG -------------------------
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 "let g:ycm_auto_trigger = 0
@@ -82,6 +91,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" default python interpreter is python3
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 """ -------------------- ctrl-p CONFIG -------------------------
 " default command for starting ctrl-p
