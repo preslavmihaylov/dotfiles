@@ -2,8 +2,23 @@
 " Integrate vim with tmux
 set term=xterm-256color
 
+" Always show status line
+set laststatus=2
+
+" Can use mouse while working
+set mouse=a
+
+" Format status line to show CWD and line/column
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+" reload file if changed when changing buffers
+au FocusGained,BufEnter * :checktime
+
 " Search moves to matched string while typing
 set incsearch
+
+" Update file when updated from outside
+set autoread
 
 " enable Man command in vim
 runtime ftplugin/man.vim
