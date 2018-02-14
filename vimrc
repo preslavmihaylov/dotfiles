@@ -209,6 +209,9 @@ nnoremap <A-Left> :vertical resize-5<CR>
 nnoremap <A-Up> :resize+5<CR>
 nnoremap <A-Down> :resize-5<CR>
 
+" map turning off highlighting after search
+nnoremap <Esc><Esc> :noh<CR>
+
 " map searching for symbol in all file
 nnoremap <F2> :exec("Search ".expand("<cword>"))<CR>
 
