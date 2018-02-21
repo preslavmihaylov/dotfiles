@@ -67,6 +67,13 @@ set showtabline=2
 set pastetoggle=<F4>
 
 " remove trailing whitespace from lines and preserve cursor position
+function! SplitTab()
+    let l = line(".")
+    let c = col(".")
+    :tabe %
+    call cursor(l, c)
+endfun
+
 function! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
@@ -176,7 +183,10 @@ if has('cscope')
         \ :!cscope-rebuild.sh<CR>
         \ :cs add $CSCOPE_SRC/cscope.out<CR>
 
-    nnoremap <F3> :exec("cs find s ".expand("<cword>"))<CR>:copen<CR>
+    nnoremap <F3> :call SplitTab()<CR>
+        \ :exec("cs find s ".expand("<cword>"))<CR>
+        \ :copen<CR>
+
     nnoremap <C-k> :cprev<CR>
     nnoremap <C-l> :cnext<CR>
 endif
@@ -215,5 +225,10 @@ nnoremap <Esc><Esc> :noh<CR>
 " map searching for symbol in all file
 nnoremap <F2> :exec("Search ".expand("<cword>"))<CR>
 
+" F10 toggles syntastic error/warning checking
+nnoremap <F10> :SyntasticToggleMode<CR>
+
 " go to mark 'm' (I use that as default). Set it by clicking 'mm'
 nnoremap <C-q> :'m<CR>
+
+nnoremap <C-c><C-c> :tabclose<CR>

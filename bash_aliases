@@ -10,6 +10,7 @@ PATH=$PATH:~/scripts
 
 # make an environment variable for my cscope db
 export CSCOPE_SRC=~/.cscope
+export CSCOPE_EDITOR=vim
 
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
