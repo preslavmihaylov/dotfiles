@@ -184,6 +184,7 @@ if has('cscope')
         \ :cs add $CSCOPE_SRC/cscope.out<CR>
 
     nnoremap <F3> :call SplitTab()<CR>
+        \ *
         \ :exec("cs find s ".expand("<cword>"))<CR>
         \ :copen<CR>
 
@@ -223,7 +224,9 @@ nnoremap <A-Down> :resize-5<CR>
 nnoremap <Esc><Esc> :noh<CR>
 
 " map searching for symbol in all file
-nnoremap <F2> :exec("Search ".expand("<cword>"))<CR>
+nnoremap <F2> :call SplitTab()<CR>
+    \ *
+    \ :exec("Search ".expand("<cword>"))<CR>
 
 " F10 toggles syntastic error/warning checking
 nnoremap <F10> :SyntasticToggleMode<CR>
