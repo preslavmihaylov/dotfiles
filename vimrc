@@ -20,11 +20,17 @@ set incsearch
 " Update file when updated from outside
 set autoread
 
+" backspace works as normal
+set backspace=2
+
+" Enable syntax highlighting
+:syntax on
+
 " enable Man command in vim
 runtime ftplugin/man.vim
 
 " change default vim colorscheme
-:colorscheme ron
+:colorscheme elflord
 
 " run make from within vim by using command make
 set makeprg=make
