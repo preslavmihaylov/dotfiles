@@ -101,8 +101,10 @@ map g/ <Plug>(incsearch-stay)
 
 """ -------------------- YouCompleteMe CONFIG -------------------------
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-"let g:ycm_auto_trigger = 0
-"let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_auto_trigger = 0
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_add_preview_to_completeopt = 0
 
 """ -------------------- syntastic CONFIG -------------------------
 set statusline+=%#warningmsg#

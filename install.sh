@@ -19,3 +19,7 @@ cp $MYDIR/tmux.conf ~/.tmux.conf
 # scripts install
 rm -rf ~/scripts || true
 cp -r $MYDIR/scripts ~/scripts
+
+# YCM install
+./install_ycm.sh
+
