@@ -20,6 +20,8 @@ cp $MYDIR/tmux.conf ~/.tmux.conf
 rm -rf ~/scripts || true
 cp -r $MYDIR/scripts ~/scripts
 
-# YCM install
+# YCM plugin install
 ./install_ycm.sh
 
+# color_coded plugin install
+./install_cc.sh
