@@ -63,9 +63,6 @@ set ignorecase
 " Always show tab line
 set showtabline=2
 
-" toggle paste modes in insert mode
-set pastetoggle=<F4>
-
 " remove trailing whitespace from lines and preserve cursor position
 function! SplitTab()
     let l = line(".")
@@ -101,10 +98,17 @@ map g/ <Plug>(incsearch-stay)
 
 """ -------------------- YouCompleteMe CONFIG -------------------------
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_auto_trigger = 0
+
+" the first option (commented out) disables auto-complete
+" the second one, triggers it only on '->' and '.'
+" let g:ycm_auto_trigger = 0
+let g:ycm_min_num_of_chars_for_completion = 200
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_server_python_interpreter = '/usr/bin/python'
+
+" remove annoying preview window appearing on top of vim
 let g:ycm_add_preview_to_completeopt = 0
+set completeopt-=preview
 
 """ -------------------- syntastic CONFIG -------------------------
 set statusline+=%#warningmsg#
@@ -160,10 +164,14 @@ nnoremap <C-p> :call OpenNERDTree()<CR>
 set tags=tags;
 
 " map tag pop
-nnoremap <C-a> <C-t>
+nnoremap <C-a> <C-o>
 
 " map tag expand
 nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
+
+" map YCM's goto command
+" (similar to <C-d>, but works better for header files)
+nnoremap <C-e> :YcmCompleter GoTo<CR>
 
 """ -------------------- CScope CONFIG -------------------------
 if has('cscope')
@@ -179,16 +187,6 @@ if has('cscope')
     cnoreabbrev csr cs reset
     cnoreabbrev css cs show
     cnoreabbrev csh cs help
-
-    " map refreshing cscope db
-    nnoremap <F12> <ESC>:cs kill -1<CR>
-        \ :!cscope-rebuild.sh<CR>
-        \ :cs add $CSCOPE_SRC/cscope.out<CR>
-
-    nnoremap <F3> :call SplitTab()<CR>
-        \ *
-        \ :exec("cs find s ".expand("<cword>"))<CR>
-        \ :copen<CR>
 
     nnoremap <C-k> :cprev<CR>
     nnoremap <C-l> :cnext<CR>
@@ -225,15 +223,33 @@ nnoremap <A-Down> :resize-5<CR>
 " map turning off highlighting after search
 nnoremap <Esc><Esc> :noh<CR>
 
+" go to mark 'm' (I use that as default). Set it by clicking 'mm'
+nnoremap <C-q> :'m<CR>
+
+nnoremap <C-c><C-c> :tabclose<CR>
+
+" F10 toggles syntastic error/warning checking
+" nnoremap <F10> :SyntasticToggleMode<CR>
+
+" Show YCM errors and warnings in location list
+nnoremap <F10> :YcmDiags<CR>
+
+" map refreshing cscope db
+nnoremap <F12> <ESC>:cs kill -1<CR>
+    \ :!cscope-rebuild.sh<CR>
+    \ :cs add $CSCOPE_SRC/cscope.out<CR>
+
 " map searching for symbol in all file
 nnoremap <F2> :call SplitTab()<CR>
     \ *
     \ :exec("Search ".expand("<cword>"))<CR>
 
-" F10 toggles syntastic error/warning checking
-nnoremap <F10> :SyntasticToggleMode<CR>
+" when finding a definition with csope, open results in a new tab
+nnoremap <F3> :call SplitTab()<CR>
+    \ *
+    \ :exec("cs find s ".expand("<cword>"))<CR>
+    \ :copen<CR>
 
-" go to mark 'm' (I use that as default). Set it by clicking 'mm'
-nnoremap <C-q> :'m<CR>
+" toggle paste modes in insert mode
+set pastetoggle=<F4>
 
-nnoremap <C-c><C-c> :tabclose<CR>
