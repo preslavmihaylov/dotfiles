@@ -3,6 +3,9 @@
 # make sure directory path is ok when script is started from anywhere
 MYDIR="$(dirname -- "$0")"
 
+# manually install vim with lua support
+./install_vim_lua.sh
+
 # .vimrc install
 cp $MYDIR/vimrc ~/.vimrc
 
