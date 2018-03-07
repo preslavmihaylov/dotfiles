@@ -22,9 +22,13 @@ cd vim
             --prefix=/usr/local
 
 make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
-sudo checkinstall
+#sudo checkinstall
+sudo make install
 
 sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 1
 sudo update-alternatives --set editor /usr/local/bin/vim
 sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
 sudo update-alternatives --set vi /usr/local/bin/vim
+
+cd ~
+sudo rm -rf /tmp/vim
