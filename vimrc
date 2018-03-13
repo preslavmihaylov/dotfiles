@@ -18,7 +18,7 @@ au FocusGained,BufEnter * :checktime
 set incsearch
 
 " Update file when updated from outside
-set autoread
+" set autoread
 
 " backspace works as normal
 set backspace=2
@@ -85,13 +85,17 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 " remove trailing spaces on save
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " run vimrc from local directory
 set exrc
 
+""" -------------------- Custom commands -------------------------
 " custom command for performing search in all source files
 command! -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
+
+" find-replace current word under cursor with given parameter
+command! -nargs=1 ReplaceWith :exec("%s/\\<".expand("<cword>")."\\>/<args>/gc")
 
 """ -------------------- Pathogen CONFIG -------------------------
 " start pathogen plugin manager
