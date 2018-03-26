@@ -2,6 +2,9 @@
 " Integrate vim with tmux
 set term=xterm-256color
 
+" show row & col in bottom-right of the screen
+set ruler
+
 " Always show status line
 set laststatus=2
 
