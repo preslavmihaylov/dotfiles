@@ -95,7 +95,7 @@ set exrc
 
 """ -------------------- Custom commands -------------------------
 " custom command for performing search in all source files
-command! -nargs=1 Search vimgrep <args> **/*.c **/*.h | cw
+command! -nargs=1 Search vimgrep <args> **/*.c **/*.h **/*.json | cw
 
 " find-replace current word under cursor with given parameter
 command! -nargs=1 ReplaceWith :exec("%s/\\<".expand("<cword>")."\\>/<args>/gc")
