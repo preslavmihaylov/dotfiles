@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get install build-essential libclang-3.9-dev libncurses-dev libz-dev cmake xz-utils libpthread-workqueue-dev llvm-3.9
+
 cd ~/.vim/bundle
 git clone https://github.com/jeaye/color_coded
 
