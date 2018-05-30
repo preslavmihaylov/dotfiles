@@ -72,6 +72,9 @@ set ignorecase
 " Always show tab line
 set showtabline=2
 
+" toggle paste modes in insert mode
+set pastetoggle=<F4>
+
 " remove trailing whitespace from lines and preserve cursor position
 function! SplitTab()
     let l = line(".")
@@ -88,14 +91,14 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 " remove trailing spaces on save
-" autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+"autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " run vimrc from local directory
 set exrc
 
 """ -------------------- Custom commands -------------------------
 " custom command for performing search in all source files
-command! -nargs=1 Search vimgrep <args> **/*.c **/*.h **/*.json | cw
+command! -nargs=1 Search vimgrep <args> **/*.c **/*.cpp **/*.h **/*.json | cw
 
 " find-replace current word under cursor with given parameter
 command! -nargs=1 ReplaceWith :exec("%s/\\<".expand("<cword>")."\\>/<args>/gc")
@@ -262,7 +265,4 @@ nnoremap <F3> :call SplitTab()<CR>
     \ *
     \ :exec("cs find s ".expand("<cword>"))<CR>
     \ :copen<CR>
-
-" toggle paste modes in insert mode
-set pastetoggle=<F4>
 
