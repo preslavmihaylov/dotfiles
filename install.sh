@@ -4,7 +4,7 @@
 MYDIR="$(dirname -- "$0")"
 
 # manually install vim with lua support
-./install_vim_lua.sh
+$MYDIR/install_vim_lua.sh
 
 # .vimrc install
 cp $MYDIR/vimrc ~/.vimrc
@@ -24,7 +24,8 @@ rm -rf ~/scripts || true
 cp -r $MYDIR/scripts ~/scripts
 
 # YCM plugin install
-./install_ycm.sh
+$MYDIR/install_ycm.sh
 
 # color_coded plugin install
-./install_cc.sh
+$MYDIR/install_cc.sh
+
