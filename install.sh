@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# request sudo access at the start of the script
+if [ $EUID != 0 ]; then
+    sudo "$0" "$@"
+    exit $?
+fi
+
 # make sure directory path is ok when script is started from anywhere
 MYDIR="$(dirname -- "$0")"
 
