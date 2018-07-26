@@ -21,7 +21,7 @@ cd vim
             --enable-multibyte \
             --prefix=/usr/local
 
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim81
 #sudo checkinstall
 sudo make install
 
