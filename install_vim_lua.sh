@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt remove vim vim-runtime gvim
-sudo apt install lua5.1 lua5.1-dev libperl-dev libncurses5-dev
+sudo apt-get remove -y vim vim-runtime gvim
+sudo apt-get install -y lua5.1 lua5.1-dev libperl-dev libncurses5-dev
 
 cd /tmp
 git clone https://github.com/vim/vim.git

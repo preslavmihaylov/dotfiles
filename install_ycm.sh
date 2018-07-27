@@ -6,7 +6,7 @@
 # 2. enter vim and type :echo has('python') || has('python3'). If the result is 1, you are good to go
 
 # Specific for Ubuntu
-sudo apt install build-essential cmake python-dev python3-dev
+sudo apt-get install -y build-essential cmake python-dev python3-dev
 
 # if this link doesn't work, go to releases.llvm.org/download.html and download correct tarball
 LLVM_TAR_URL=http://releases.llvm.org/5.0.1/clang+llvm-5.0.1-x86_64-linux-gnu-ubuntu-16.04.tar.xz
