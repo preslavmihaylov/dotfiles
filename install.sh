@@ -29,6 +29,9 @@ cp $MYDIR/tmux.conf ~/.tmux.conf
 rm -rf ~/scripts || true
 cp -r $MYDIR/scripts ~/scripts
 
+# create folder for cscope connections
+mkdir ~/.cscope
+
 # YCM plugin install
 $MYDIR/install_ycm.sh
 
