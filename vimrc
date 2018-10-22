@@ -120,13 +120,15 @@ map g/ <Plug>(incsearch-stay)
 " let g:ycm_auto_trigger = 0
 let g:ycm_min_num_of_chars_for_completion = 200
 let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_server_python_interpreter = 'python3'
 
 " remove annoying preview window appearing on top of vim
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
 """ -------------------- syntastic CONFIG -------------------------
+" THIS PLUGIN IS NOT USED ANYMORE
+
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
