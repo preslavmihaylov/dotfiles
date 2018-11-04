@@ -127,8 +127,6 @@ let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
 """ -------------------- syntastic CONFIG -------------------------
-" THIS PLUGIN IS NOT USED ANYMORE
-
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
@@ -245,6 +243,10 @@ nnoremap <Esc><Esc> :noh<CR>
 nnoremap <C-q> :'m<CR>
 
 nnoremap <C-c><C-c> :tabclose<CR>
+
+" comment/uncomment multiple lines in visual mode
+xnoremap <C-r> :norm i//<CR>
+xnoremap <C-t> :norm 0xx<CR>
 
 " F10 toggles syntastic error/warning checking
 " nnoremap <F10> :SyntasticToggleMode<CR>
