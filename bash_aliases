@@ -5,6 +5,9 @@ stty -ixon
 alias targz_extract="tar -xvf"
 alias vi=vim
 
+# run gdb until program bombs & print stack trace
+alias gdb_trace=gdb --batch --ex r --ex bt --ex q --args
+
 # Add all my scripts to path
 PATH=$PATH:~/scripts
 
