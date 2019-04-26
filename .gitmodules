@@ -10,3 +10,6 @@
 [submodule "vim/bundle/vim-nerdtree-tabs"]
 	path = vim/bundle/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs
+[submodule "vim/bundle/vim-todo-lists"]
+	path = vim/bundle/vim-todo-lists
+	url = https://github.com/aserebryakov/vim-todo-lists
