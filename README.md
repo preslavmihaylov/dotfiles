@@ -26,6 +26,8 @@ These are the tools you will need to, surely, install:
 * nodejs
 * go
 
+All of these can be installed using the `apt-get install` utility. If you would like to find the exact commands, check out [ubuntu-install](https://github.com/preslavmihaylov/ubuntu-install)
+
 If you found out I missed a dependency, feel free to submit a PR. :)
 
 ## Installation
