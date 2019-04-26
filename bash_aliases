@@ -4,6 +4,7 @@ stty -ixon
 
 alias targz_extract="tar -xvf"
 alias vi=vim
+alias vim=nvim
 
 # run gdb until program bombs & print stack trace
 alias gdb_trace="gdb --batch --ex r --ex bt --ex q --args"
@@ -18,3 +19,4 @@ export CSCOPE_EDITOR=vim
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
+
