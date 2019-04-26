@@ -9,9 +9,6 @@ fi
 # make sure directory path is ok when script is started from anywhere
 MYDIR="$(dirname -- "$0")"
 
-# manually install vim with lua support
-$MYDIR/install_vim_lua.sh
-
 # .vimrc install
 cp $MYDIR/vimrc ~/.vimrc
 
@@ -37,7 +34,4 @@ mkdir ~/.cscope
 
 # YCM plugin install
 $MYDIR/install_ycm.sh
-
-# color_coded plugin install
-$MYDIR/install_cc.sh
 
