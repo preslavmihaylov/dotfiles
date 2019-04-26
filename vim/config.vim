@@ -1,0 +1,69 @@
+" integrate vim clipboard with system clipboard
+set clipboard+=unnamedplus
+
+" Always show status line
+set laststatus=2
+
+" Can use mouse while working
+set mouse=a
+
+" Format status line to show current file
+set statusline=\ %f
+
+" Format status line to include CWD
+set statusline+=\ \ CWD:%{getcwd()}
+
+" Format status line to include row,col + percent through file
+set statusline+=\ %=%(%l,%c%V\ %=\ %P%)
+
+" reload file if changed from outside
+au FocusGained,BufEnter * :checktime
+
+" Enable syntax highlighting
+syntax on
+
+" change default vim colorscheme
+colorscheme default
+
+" run make from within vim by using command make
+set makeprg=make
+
+" highlight column 110
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
+" show tabs as >---
+set listchars=tab:>-
+set list
+
+" Show line numbers
+set number
+
+" display title of current file in terminal title bar
+set title
+
+" tab = 4 spaces
+set tabstop=4
+
+" shift+> = 4 spaces
+set shiftwidth=4
+
+" tab uses spaces
+set expandtab
+
+" case insensitive search
+set ignorecase
+
+" Always show tab line
+set showtabline=2
+
+" toggle paste modes in insert mode
+set pastetoggle=<F4>
+
+" remove trailing spaces on save
+autocmd BufWritePre * :call StripTrailingWhitespaces()
+
+" enable blinking cursor in nvim
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
