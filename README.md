@@ -50,7 +50,7 @@ All plugins are located in vim/bundle as submodules.
 If you would like to remove some of the plugins found there, modify `.gitmodules` and remove the relevant section
 
 Also, the `YouCompleteMe` vim plugin can optionally include code completion support for some languages.  
-Currently, I've enabled extra support for `go`, `javascript/ts', `c/c++`.  
+Currently, I've enabled extra support for `go`, `javascript/ts`, `c/c++`.  
 If you would like to exclude some of these, modify the `install\_ycm.sh` file.  
 If you want to add some extra code completion support (csharp, java, rust), refer to the [YouCompleteMe Documentaion](https://github.com/Valloric/YouCompleteMe#linux-64-bit)
 
@@ -62,7 +62,7 @@ I have separated my vim configurations into several .vim files:
  * vim/commands.vim - custom commands I've created. **Beware**, These are used in other config files as well.
 
 ### tmux configuration
-Located in tmux.conf
+Located in `tmux.conf`
 
 ### Bash options
 Located in bash\_aliases. This is the default user bash profile configuration used on Ubuntu.  
