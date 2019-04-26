@@ -1,9 +1,6 @@
 """ -------------------- VIM CONFIG -------------------------
-" Integrate vim with tmux
-set term=xterm-256color
-
-" show row & col in bottom-right of the screen
-set ruler
+" integrate vim clipboard with system clipboard
+set clipboard+=unnamedplus
 
 " Always show status line
 set laststatus=2
@@ -11,29 +8,23 @@ set laststatus=2
 " Can use mouse while working
 set mouse=a
 
-" Format status line to show CWD and line/column
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" Format status line to show current file
+set statusline=\ %f
 
-" reload file if changed when changing buffers
+" Format status line to include CWD
+set statusline+=\ \ CWD:%{getcwd()}
+
+" Format status line to include row,col + percent through file
+set statusline+=\ %=%(%l,%c%V\ %=\ %P%)
+
+" reload file if changed from outside
 au FocusGained,BufEnter * :checktime
 
-" Search moves to matched string while typing
-set incsearch
-
-" Update file when updated from outside
-" set autoread
-
-" backspace works as normal
-set backspace=2
-
 " Enable syntax highlighting
-:syntax on
-
-" enable Man command in vim
-runtime ftplugin/man.vim
+syntax on
 
 " change default vim colorscheme
-:colorscheme elflord
+colorscheme default
 
 " run make from within vim by using command make
 set makeprg=make
@@ -52,16 +43,11 @@ set number
 " display title of current file in terminal title bar
 set title
 
-" Highlight search results
-set hlsearch
-
 " tab = 4 spaces
 set tabstop=4
+
 " shift+> = 4 spaces
 set shiftwidth=4
-
-" keeps indent from previous line
-set autoindent
 
 " tab uses spaces
 set expandtab
@@ -91,10 +77,12 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 " remove trailing spaces on save
-"autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" run vimrc from local directory
-set exrc
+" enable blinking cursor in nvim
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 """ -------------------- Custom commands -------------------------
 " custom command for performing search in all source files
@@ -104,8 +92,13 @@ command! -nargs=1 Search vimgrep <args> **/*.c **/*.cpp **/*.h **/*.json | cw
 command! -nargs=1 ReplaceWith :exec("%s/\\<".expand("<cword>")."\\>/<args>/gc")
 
 """ -------------------- Pathogen CONFIG -------------------------
+
 " start pathogen plugin manager
 execute pathogen#infect()
+
+""" -------------------- todo-lists CONFIG -------------------------
+" don't move items when marked as done
+let g:VimTodoListsMoveItems = 0
 
 """ -------------------- incsearch.vim CONFIG -------------------------
 map / <Plug>(incsearch-forward)
@@ -125,19 +118,6 @@ let g:ycm_server_python_interpreter = 'python3'
 " remove annoying preview window appearing on top of vim
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
-
-""" -------------------- syntastic CONFIG -------------------------
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-" default python interpreter is python3
-" let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 """ -------------------- ctrl-p CONFIG -------------------------
 " default command for starting ctrl-p
@@ -242,6 +222,7 @@ nnoremap <Esc><Esc> :noh<CR>
 " go to mark 'm' (I use that as default). Set it by clicking 'mm'
 nnoremap <C-q> :'m<CR>
 
+" mapping for closing the currently open tab
 nnoremap <C-c><C-c> :tabclose<CR>
 
 " comment/uncomment multiple lines in visual mode
