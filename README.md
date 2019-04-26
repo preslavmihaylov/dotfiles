@@ -26,6 +26,8 @@ These are the tools you will need to, surely, install:
 * nodejs
 * go
 
+All of these can be installed using the `apt-get install` utility. If you would like to find the exact commands, check out [ubuntu-install](https://github.com/preslavmihaylov/ubuntu-install)
+
 If you found out I missed a dependency, feel free to submit a PR. :)
 
 ## Installation
@@ -50,8 +52,8 @@ All plugins are located in vim/bundle as submodules.
 If you would like to remove some of the plugins found there, modify `.gitmodules` and remove the relevant section
 
 Also, the `YouCompleteMe` vim plugin can optionally include code completion support for some languages.  
-Currently, I've enabled extra support for `go`, `javascript/ts', `c/c++`.  
-If you would like to exclude some of these, modify the `install\_ycm.sh` file.  
+Currently, I've enabled extra support for `go`, `javascript/ts`, `c/c++`.  
+If you would like to exclude some of these, modify the `install_ycm.sh` file.  
 If you want to add some extra code completion support (csharp, java, rust), refer to the [YouCompleteMe Documentaion](https://github.com/Valloric/YouCompleteMe#linux-64-bit)
 
 ### vim options
@@ -62,10 +64,10 @@ I have separated my vim configurations into several .vim files:
  * vim/commands.vim - custom commands I've created. **Beware**, These are used in other config files as well.
 
 ### tmux configuration
-Located in tmux.conf
+Located in `tmux.conf`
 
 ### Bash options
-Located in bash\_aliases. This is the default user bash profile configuration used on Ubuntu.  
+Located in `bash_aliases`. This is the default user bash profile configuration used on Ubuntu.  
 This might differ if you are using a different Linux distribution.
 
 If that is the case, adding this line to your .bashrc should fix it:
