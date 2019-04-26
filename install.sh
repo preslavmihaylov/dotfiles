@@ -19,6 +19,9 @@ cp $MYDIR/vimrc ~/.vimrc
 rm -rf ~/.vim || true
 cp -r $MYDIR/vim ~/.vim
 
+# nvim install
+cp -r $MYDIR/nvim ~/.config/
+
 # .bash_aliases install
 cp $MYDIR/bash_aliases ~/.bash_aliases
 
