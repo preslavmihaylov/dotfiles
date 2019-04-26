@@ -3,6 +3,9 @@
 " start pathogen plugin manager
 execute pathogen#infect()
 
+""" -------------------- vim-commentary CONFIG -------------------------
+autocmd FileType cpp setlocal commentstring=//\ %s
+
 """ -------------------- todo-lists CONFIG -------------------------
 " don't move items when marked as done
 let g:VimTodoListsMoveItems = 0

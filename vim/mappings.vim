@@ -34,6 +34,10 @@ nnoremap <C-q> :'m<CR>
 " mapping for closing the currently open tab
 nnoremap <C-c><C-c> :tabclose<CR>
 
+" Ctrl-/ comments/uncomments line(s) in normal and visual mode
+nmap <C-_> gcc
+vmap <C-_> gc
+
 " comment/uncomment multiple lines in visual mode
 xnoremap <C-r> :norm i//<CR>
 xnoremap <C-t> :norm 0xx<CR>
