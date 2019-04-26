@@ -6,7 +6,4 @@
 # 2. enter vim and type :echo has('python') || has('python3'). If the result is 1, you are good to go
 
 cd ~/.vim/bundle/YouCompleteMe
-git submodule update --init --recursive
-
-cd ~/.vim/bundle/YouCompleteMe
-python3 install.py --clang-completer
+python3 install.py --clang-completer --go-completer --ts-completer
