@@ -5,10 +5,6 @@
 # 1. type vim --version and search for version number and Extra patches. Verify they meet criteria
 # 2. enter vim and type :echo has('python') || has('python3'). If the result is 1, you are good to go
 
-# clone ycm and install dependencies
-cd ~/.vim/bundle
-git clone https://github.com/Valloric/YouCompleteMe
-
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
 
