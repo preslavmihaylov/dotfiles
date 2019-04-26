@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-todo-lists"]
 	path = vim/bundle/vim-todo-lists
 	url = https://github.com/aserebryakov/vim-todo-lists
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
