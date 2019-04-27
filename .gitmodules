@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-gutentags"]
 	path = vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
+[submodule "vim/bundle/gutentags_plus"]
+	path = vim/bundle/gutentags_plus
+	url = https://github.com/skywind3000/gutentags_plus
