@@ -2,6 +2,16 @@
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
+" map tag pop
+nnoremap <C-a> <C-o>
+
+" map tag expand
+nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
+
+" map YCM's goto command
+" (similar to <C-d>, but works better for header files)
+nnoremap <C-e> :YcmCompleter GoTo<CR>
+
 " map undo/redo
 nnoremap <C-z> :undo<CR>
 nnoremap <C-u> :redo<CR>
