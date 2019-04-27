@@ -1,21 +1,22 @@
-""" -------------------- Pathogen CONFIG -------------------------
+""" -------------------- Pathogen -------------------------
 
 " start pathogen plugin manager
 execute pathogen#infect()
+execute pathogen#helptags()
 
-""" -------------------- vim-commentary CONFIG -------------------------
+""" -------------------- vim-commentary -------------------------
 autocmd FileType cpp setlocal commentstring=//\ %s
 
-""" -------------------- todo-lists CONFIG -------------------------
+""" -------------------- todo-lists -------------------------
 " don't move items when marked as done
 let g:VimTodoListsMoveItems = 0
 
-""" -------------------- incsearch.vim CONFIG -------------------------
+""" -------------------- incsearch.vim -------------------------
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-""" -------------------- YouCompleteMe CONFIG -------------------------
+""" -------------------- YouCompleteMe -------------------------
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " the first option (commented out) disables auto-complete
@@ -29,7 +30,7 @@ let g:ycm_server_python_interpreter = 'python3'
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
-""" -------------------- ctrl-p CONFIG -------------------------
+""" -------------------- ctrl-p -------------------------
 " default command for starting ctrl-p
 let g:ctrlp_map='<c-f>'
 
@@ -43,7 +44,7 @@ let g:ctrlp_working_path_mode='w'
 " ctrl-p will include dotfiles in its search
 let g:ctrlp_show_hidden=1
 
-""" -------------------- NERDTree CONFIG -------------------------
+""" -------------------- nerdtree -------------------------
 " nerd tree opens files in different tabs
 " let g:NERDTreeMapOpenInTab='<ENTER>'
 
@@ -65,7 +66,7 @@ endfunction
 " map toggling nerd tree
 nnoremap <C-p> :call OpenNERDTree()<CR>
 
-""" -------------------- CTags CONFIG -------------------------
+""" -------------------- ctags -------------------------
 " enable ctags
 set tags=tags;
 
@@ -79,22 +80,44 @@ nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
 " (similar to <C-d>, but works better for header files)
 nnoremap <C-e> :YcmCompleter GoTo<CR>
 
-""" -------------------- CScope CONFIG -------------------------
+""" -------------------- cscope -------------------------
 if has('cscope')
-    set cscopetag cscopeverbose
+    " set cscopetag cscopeverbose
 
-    if has('quickfix')
-        set cscopequickfix=s-,c-,d-,i-,t-,e-
-    endif
+    " if has('quickfix')
+    "     set cscopequickfix=s-,c-,d-,i-,t-,e-
+    " endif
 
-    cnoreabbrev csa cs add
-    cnoreabbrev csf cs find
-    cnoreabbrev csk cs kill
-    cnoreabbrev csr cs reset
-    cnoreabbrev css cs show
-    cnoreabbrev csh cs help
+    " cnoreabbrev csa cs add
+    " cnoreabbrev csf cs find
+    " cnoreabbrev csk cs kill
+    " cnoreabbrev csr cs reset
+    " cnoreabbrev css cs show
+    " cnoreabbrev csh cs help
 
-    nnoremap <C-k> :cprev<CR>
-    nnoremap <C-l> :cnext<CR>
+    " nnoremap <C-k> :cprev<CR>
+    " nnoremap <C-l> :cnext<CR>
 endif
+
+""" -------------------- gutentags -------------------------
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+
+" config project root markers.
+let g:gutentags_project_root = ['.root']
+
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+
+""" -------------------- tagbar -------------------------
+
+let g:tagbar_autoclose = 0
+let g:tagbar_width = 43
+
+autocmd BufEnter *.cpp nested :TagbarOpen
+autocmd BufEnter *.c nested :TagbarOpen
+autocmd BufEnter *.py nested :TagbarOpen
 
