@@ -22,13 +22,18 @@ map g/ <Plug>(incsearch-stay)
 " the first option (commented out) disables auto-complete
 " the second one, triggers it only on '->' and '.'
 " let g:ycm_auto_trigger = 0
-let g:ycm_min_num_of_chars_for_completion = 200
+" let g:ycm_min_num_of_chars_for_completion = 200
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_server_python_interpreter = 'python3'
 
 " remove annoying preview window appearing on top of vim
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
+
+" blacklist certain filetypes from plugin
+let g:ycm_filetype_blacklist = {
+    \ 'vim': 1
+    \}
 
 """ -------------------- ctrl-p -------------------------
 " default command for starting ctrl-p
