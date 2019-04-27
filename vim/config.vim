@@ -37,6 +37,10 @@ syntax on
 " change default vim colorscheme
 colorscheme molokai
 
+" override default colors for YouCompleteMe window for more contrast
+highlight Pmenu guibg=#918F8F guifg=#000000
+highlight PmenuSel guibg=#2B2929 guifg=#FFFFFF
+
 " run make from within vim by using command make
 set makeprg=make
 
