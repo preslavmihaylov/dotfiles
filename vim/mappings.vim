@@ -22,6 +22,7 @@ nnoremap <C-Down> :tabm -1<CR>
 
 " map switch windows
 nnoremap <Tab> <C-w>w
+nnoremap <S-Tab> <C-w>h
 
 " map scroll up
 nnoremap <C-w> <C-u>
