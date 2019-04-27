@@ -12,12 +12,13 @@ alias gdb_trace="gdb --batch --ex r --ex bt --ex q --args"
 # Add all my scripts to path
 PATH=$PATH:~/scripts
 
-# Add go to aliases
+# Setup go environment
 PATH=$PATH:/usr/local/go/bin
-GOPATH=$HOME/programming/go
+PATH=$PATH:~/programming/go/bin
+export GOPATH=$HOME/programming/go
 
 # make an environment variable for my cscope db
-export CSCOPE_SRC=~/.cscope
+# export CSCOPE_SRC=~/.cscope
 export CSCOPE_EDITOR=vim
 
 if [[ ! $TERM =~ screen ]]; then
