@@ -113,4 +113,36 @@ let g:tagbar_width = 43
 autocmd BufEnter *.cpp nested :TagbarOpen
 autocmd BufEnter *.c nested :TagbarOpen
 autocmd BufEnter *.py nested :TagbarOpen
+autocmd BufEnter *.go nested :TagbarOpen
 
+""" -------------------- vim-go -------------------------
+" all errors are shown in the quickfix window
+let g:go_list_type = "quickfix"
+
+" automatically add import paths when saving file
+let g:go_fmt_command = "goimports"
+
+" enable syntax highlighting
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+
+" enable go metalinter
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+
+" automatically show GoInfo output
+" let g:go_auto_type_info = 1
+
+" automatically highlight variable your cursor is on
+let g:go_auto_sameids = 1
+
+" adjust quickfix window height
+let g:go_list_height = 8
+
+let g:go_term_mode = "split above"
