@@ -17,10 +17,6 @@ PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:~/programming/go/bin
 export GOPATH=$HOME/programming/go
 
-# make an environment variable for my cscope db
-# export CSCOPE_SRC=~/.cscope
-export CSCOPE_EDITOR=vim
-
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
