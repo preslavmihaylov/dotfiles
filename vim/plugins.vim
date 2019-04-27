@@ -5,6 +5,7 @@ execute pathogen#infect()
 execute pathogen#helptags()
 
 """ -------------------- vim-commentary -------------------------
+" override default comment style for cpp files
 autocmd FileType cpp setlocal commentstring=//\ %s
 
 """ -------------------- todo-lists -------------------------
@@ -31,9 +32,9 @@ let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
 " blacklist certain filetypes from plugin
-let g:ycm_filetype_blacklist = {
-    \ 'vim': 1
-    \}
+" let g:ycm_filetype_blacklist = {
+"     \ 'vim': 1
+"     \}
 
 """ -------------------- ctrl-p -------------------------
 " default command for starting ctrl-p
