@@ -56,7 +56,7 @@ let g:ctrlp_show_hidden=1
 " start NERDTree automatically on startup
 " autocmd vimenter * NERDTree
 
-let g:NERDTreeWinSize=50
+let g:NERDTreeWinSize=40
 
 " if NERDTreeTab is open --> NERDTreeToggle, else NERDTreeFind
 function! OpenNERDTree()
