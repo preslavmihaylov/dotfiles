@@ -25,3 +25,6 @@
 [submodule "vim/bundle/gutentags_plus"]
 	path = vim/bundle/gutentags_plus
 	url = https://github.com/skywind3000/gutentags_plus
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
