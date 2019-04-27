@@ -49,9 +49,28 @@ nnoremap <C-c><C-c> :tabclose<CR>
 nmap <C-_> gcc
 vmap <C-_> gc
 
-" comment/uncomment multiple lines in visual mode
-xnoremap <C-r> :norm i//<CR>
-xnoremap <C-t> :norm 0xx<CR>
+" map C-k/C-l to traverse quickfix window
+nnoremap <C-k> :cprev<CR>
+nnoremap <C-l> :cnext<CR>
+
+" create custom mappings for Go files
+autocmd FileType go nmap <leader>b  :<C-u>call BuildGoFiles()<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <leader>tt <Plug>(go-test-func)
+autocmd FileType go nmap <leader>c  <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <leader>q  <Plug>(go-alternate-edit)
+autocmd FileType go nmap <leader>i  <Plug>(go-info)
+autocmd FileType go nmap <leader>d  <Plug>(go-doc)
+autocmd FileType go nmap <leader>ci  <Plug>(go-describe)
+autocmd FileType go nmap <leader>cr  <Plug>(go-referrers)
+autocmd FileType go nmap <leader>cc  <Plug>(go-callers)
+autocmd FileType go nmap <leader>cs  <Plug>(go-callstack)
+
+" remap tag expand/pop commands for go files to use vim-go alternatives
+autocmd FileType go nmap <C-a>  :GoDefPop<CR>
+autocmd FileType go nmap <C-d>  :GoDef<CR>
+autocmd FileType go nmap <leader>s  :GoDefStack<CR>
 
 " F10 toggles syntastic error/warning checking
 " nnoremap <F10> :SyntasticToggleMode<CR>
