@@ -31,3 +31,6 @@
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "vim/bundle/vim-go"]
+	path = vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go
