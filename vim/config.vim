@@ -35,7 +35,7 @@ au FocusGained,BufEnter * :checktime
 syntax on
 
 " change default vim colorscheme
-colorscheme default
+colorscheme molokai
 
 " run make from within vim by using command make
 set makeprg=make
