@@ -72,17 +72,6 @@ autocmd FileType go nmap <C-a>  :GoDefPop<CR>
 autocmd FileType go nmap <C-d>  :GoDef<CR>
 autocmd FileType go nmap <leader>s  :GoDefStack<CR>
 
-" F10 toggles syntastic error/warning checking
-" nnoremap <F10> :SyntasticToggleMode<CR>
-
-" Show YCM errors and warnings in location list
-nnoremap <F10> :YcmDiags<CR>
-
-" map refreshing cscope db
-nnoremap <F12> <ESC>:cs kill -1<CR>
-    \ :!cscope-rebuild.sh<CR>
-    \ :cs add $CSCOPE_SRC/cscope.out<CR>
-
 " map searching for symbol in all file
 nnoremap <F2> :call SplitTab()<CR>
     \ *
