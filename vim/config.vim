@@ -45,8 +45,8 @@ set colorcolumn=110
 highlight ColorColumn ctermbg=darkgray
 
 " show tabs as >---
-set listchars=tab:>-
-set list
+" set listchars=tab:>-
+" set list
 
 " Show line numbers
 set number
