@@ -23,7 +23,7 @@ set mouse=a
 set statusline=\ %f
 
 " Format status line to include CWD
-set statusline+=\ \ CWD:%{getcwd()}
+" set statusline+=\ \ CWD:%{getcwd()}
 
 " Format status line to include row,col + percent through file
 set statusline+=\ %=%(%l,%c%V\ %=\ %P%)
