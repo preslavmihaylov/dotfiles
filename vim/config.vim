@@ -61,7 +61,11 @@ set showtabline=2
 set pastetoggle=<F4>
 
 " remove trailing spaces on save
-autocmd BufWritePre * :call StripTrailingWhitespaces()
+autocmd BufWritePre *.cpp :call StripTrailingWhitespaces()
+autocmd BufWritePre *.c :call StripTrailingWhitespaces()
+autocmd BufWritePre *.py :call StripTrailingWhitespaces()
+autocmd BufWritePre *.js :call StripTrailingWhitespaces()
+autocmd BufWritePre *.go :call StripTrailingWhitespaces()
 
 " enable blinking cursor in nvim
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
