@@ -24,6 +24,14 @@ function! BuildGoFiles()
   endif
 endfun
 
+" Toggle between displaying/hiding tabs
+function! ShowTabsToggle()
+    set listchars=tab:>-
+    set list!
+endfun
+
+command! -nargs=0 ShowTabsToggle :call ShowTabsToggle()
+
 " custom command for performing search in all source files
 command! -nargs=1 Search vimgrep <args> **/*.c **/*.cpp **/*.h **/*.json | cw
 
