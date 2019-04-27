@@ -14,6 +14,16 @@ function! StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
+" run :GoBuild or :GoTestCompile based on the go file
+function! BuildGoFiles()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfun
+
 " custom command for performing search in all source files
 command! -nargs=1 Search vimgrep <args> **/*.c **/*.cpp **/*.h **/*.json | cw
 
