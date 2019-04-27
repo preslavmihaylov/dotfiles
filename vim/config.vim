@@ -1,8 +1,20 @@
 " integrate vim clipboard with system clipboard
 set clipboard+=unnamedplus
 
+" quickfix window is always at the bottom
+autocmd FileType qf wincmd J
+
+" new splits open below the current window
+set splitbelow
+
+" enable cooler colors
+set termguicolors
+
 " Always show status line
 set laststatus=2
+
+" Save file when building with make/GoBuild
+set autowrite
 
 " Can use mouse while working
 set mouse=a
