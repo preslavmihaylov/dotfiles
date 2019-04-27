@@ -75,16 +75,6 @@ nnoremap <C-p> :call OpenNERDTree()<CR>
 " enable ctags
 set tags=tags;
 
-" map tag pop
-nnoremap <C-a> <C-o>
-
-" map tag expand
-nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
-
-" map YCM's goto command
-" (similar to <C-d>, but works better for header files)
-nnoremap <C-e> :YcmCompleter GoTo<CR>
-
 """ -------------------- cscope -------------------------
 if has('cscope')
     " set cscopetag cscopeverbose
@@ -100,8 +90,6 @@ if has('cscope')
     " cnoreabbrev css cs show
     " cnoreabbrev csh cs help
 
-    " nnoremap <C-k> :cprev<CR>
-    " nnoremap <C-l> :cnext<CR>
 endif
 
 """ -------------------- gutentags -------------------------
