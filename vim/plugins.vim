@@ -4,6 +4,9 @@
 execute pathogen#infect()
 execute pathogen#helptags()
 
+""" -------------------- delimitMate -------------------------
+let delimitMate_backspace = 1
+
 """ -------------------- vim-commentary -------------------------
 " override default comment style for cpp files
 autocmd FileType cpp setlocal commentstring=//\ %s
