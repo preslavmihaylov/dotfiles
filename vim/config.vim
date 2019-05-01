@@ -76,6 +76,9 @@ set showtabline=2
 " toggle paste modes in insert mode
 set pastetoggle=<F4>
 
+" disable matching paren highlighting
+let loaded_matchparen = 0
+
 " remove trailing spaces on save
 autocmd BufWritePre *.cpp :call StripTrailingWhitespaces()
 autocmd BufWritePre *.c :call StripTrailingWhitespaces()
@@ -84,6 +87,6 @@ autocmd BufWritePre *.js :call StripTrailingWhitespaces()
 autocmd BufWritePre *.go :call StripTrailingWhitespaces()
 
 " enable blinking cursor in nvim
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-  \,sm:block-blinkwait175-blinkoff150-blinkon175
+" set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+"   \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+"   \,sm:block-blinkwait175-blinkoff150-blinkon175
