@@ -106,7 +106,7 @@ autocmd BufEnter *.go nested :TagbarOpen
 let g:go_list_type = "quickfix"
 
 " automatically add import paths when saving file
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 
 " enable syntax highlighting
 let g:go_highlight_types = 1
