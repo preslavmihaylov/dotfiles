@@ -34,6 +34,9 @@ let g:ycm_server_python_interpreter = 'python3'
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
+" Enter closes the completion window
+let g:ycm_key_list_stop_completion = ['<CR>']
+
 " blacklist certain filetypes from plugin
 " let g:ycm_filetype_blacklist = {
 "     \ 'vim': 1
