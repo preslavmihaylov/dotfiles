@@ -134,4 +134,9 @@ let g:go_auto_sameids = 1
 " adjust quickfix window height
 let g:go_list_height = 8
 
+" terminal opens as a horizontal split below the main window
 let g:go_term_mode = "split above"
+
+" More verbose output on failed tests in quickfix window
+let g:go_test_show_name = 1
+
