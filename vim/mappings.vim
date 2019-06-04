@@ -2,12 +2,6 @@
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
-" map tag pop
-nnoremap <C-a> <C-o>
-
-" map tag expand
-nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
-
 " map YCM's goto command
 " (similar to <C-d>, but works better for header files)
 nnoremap <C-e> :YcmCompleter GoTo<CR>
@@ -53,31 +47,39 @@ vmap <C-_> gc
 nnoremap <C-k> :cprev<CR>
 nnoremap <C-l> :cnext<CR>
 
+" map closing quickfix window
+nnoremap <F1> :ccl<CR>
+
 " create custom mappings for Go files
-autocmd FileType go nmap <leader>b  :<C-u>call BuildGoFiles()<CR>
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
-autocmd FileType go nmap <leader>tt <Plug>(go-test-func)
-autocmd FileType go nmap <leader>c  <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <leader>q  <Plug>(go-alternate-edit)
-autocmd FileType go nmap <leader>i  <Plug>(go-info)
-autocmd FileType go nmap <leader>d  <Plug>(go-doc)
-autocmd FileType go nmap <leader>ci  <Plug>(go-describe)
-autocmd FileType go nmap <leader>cr  <Plug>(go-referrers)
-autocmd FileType go nmap <leader>cc  <Plug>(go-callers)
-autocmd FileType go nmap <leader>cs  <Plug>(go-callstack)
+autocmd BufEnter *.go nmap <leader>b  :<C-u>call BuildGoFiles()<CR>
+autocmd BufEnter *.go nmap <leader>r  <Plug>(go-run)
+autocmd BufEnter *.go nmap <leader>t  <Plug>(go-test)
+autocmd BufEnter *.go nmap <leader>tt <Plug>(go-test-func)
+autocmd BufEnter *.go nmap <leader>c  <Plug>(go-coverage-toggle)
+autocmd BufEnter *.go nmap <leader>q  <Plug>(go-alternate-edit)
+autocmd BufEnter *.go nmap <leader>i  <Plug>(go-info)
+autocmd BufEnter *.go nmap <leader>d  <Plug>(go-doc)
+autocmd BufEnter *.go nmap <leader>ci  <Plug>(go-describe)
+autocmd BufEnter *.go nmap <leader>cr  <Plug>(go-referrers)
+autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
+autocmd BufEnter *.go nmap <leader>cs  <Plug>(go-callstack)
+autocmd BufEnter *.go nmap <leader>l  <Plug>(go-lint)
+
+" map tag pop and push
+autocmd BufEnter * nnoremap <C-a> <C-o>
+autocmd BufEnter * nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
 
 " remap tag expand/pop commands for go files to use vim-go alternatives
-autocmd FileType go nmap <C-a>  :GoDefPop<CR>
-autocmd FileType go nmap <C-d>  :GoDef<CR>
-autocmd FileType go nmap <leader>s  :GoDefStack<CR>
+autocmd BufEnter *.go nmap <C-a>  :GoDefPop<CR>
+autocmd BufEnter *.go nmap <C-d>  :GoDef<CR>
+autocmd BufEnter *.go nmap <leader>s  :GoDefStack<CR>
 
-" map searching for symbol in all file
+" map searching for symbol in all files
 nnoremap <F2> :call SplitTab()<CR>
     \ *
     \ :exec("Search ".expand("<cword>"))<CR>
 
-" when finding a definition with csope, open results in a new tab
+" when finding a definition with cscope, open results in a new tab
 nnoremap <F3> :call SplitTab()<CR>
     \ *
     \ :exec("cs find s ".expand("<cword>"))<CR>
