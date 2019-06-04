@@ -83,7 +83,11 @@ nnoremap <C-p> :call OpenNERDTree()<CR>
 set tags=tags;
 
 " enable gtags module
-let g:gutentags_modules = ['ctags', 'gtags_cscope']
+let g:gutentags_modules = ['ctags']
+
+" additionally enable cscope when working on c/cpp source files
+autocmd FileType cpp let g:gutentags_modules = ['ctags', 'gtags_cscope']
+autocmd FileType c let g:gutentags_modules = ['ctags', 'gtags_cscope']
 
 " config project root markers.
 let g:gutentags_project_root = ['.root']
