@@ -38,8 +38,11 @@ syntax on
 colorscheme molokai
 
 " override default colors for YouCompleteMe window for more contrast
-highlight Pmenu guibg=#918F8F guifg=#000000
+highlight Pmenu    guibg=#918F8F guifg=#000000
 highlight PmenuSel guibg=#2B2929 guifg=#FFFFFF
+
+" override default colors for error sign to be red bg and white fg
+highlight Error    guifg=#FFFFFF guibg=#FF0000
 
 " run make from within vim by using command make
 set makeprg=make
