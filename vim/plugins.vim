@@ -127,7 +127,16 @@ let g:go_highlight_generate_tags = 1
 
 " enable go metalinter
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+
+" let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
 let g:go_metalinter_autosave = 1
+
+" default metalinter is deprecated. Change to better alternative
+let g:go_metalinter_command='golangci-lint'
+
+" vim-go debug: show shell commands being executed
+" let g:go_debug=['shell-commands']
 
 " automatically show GoInfo output
 " let g:go_auto_type_info = 1
@@ -143,4 +152,3 @@ let g:go_term_mode = "split above"
 
 " More verbose output on failed tests in quickfix window
 let g:go_test_show_name = 1
-
