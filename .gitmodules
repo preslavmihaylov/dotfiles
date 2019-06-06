@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go
+[submodule "vim/bundle/vim-over"]
+	path = vim/bundle/vim-over
+	url = https://github.com/osyo-manga/vim-over
