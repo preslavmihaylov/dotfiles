@@ -19,6 +19,7 @@ cp $MYDIR/bash_aliases ~/.bash_aliases
 
 # tmux conf install
 cp $MYDIR/tmux.conf ~/.tmux.conf
+cp -r $MYDIR/tmux-gitbar ~/.tmux-gitbar
 
 # YCM plugin install
 $MYDIR/install_ycm.sh
