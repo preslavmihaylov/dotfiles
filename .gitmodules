@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vim-over"]
 	path = vim/bundle/vim-over
 	url = https://github.com/osyo-manga/vim-over
+[submodule "tmux-gitbar"]
+	path = tmux-gitbar
+	url = https://github.com/arl/tmux-gitbar
