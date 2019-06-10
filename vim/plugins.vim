@@ -20,8 +20,14 @@ map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" stop results highlighting after cursor moves
+let g:incsearch#auto_nohlsearch = 1
+
 """ -------------------- YouCompleteMe -------------------------
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+" disable YCM on startup
+" let g:loaded_youcompleteme = 0
 
 " the first option (commented out) disables auto-complete
 " the second one, triggers it only on '->' and '.'
