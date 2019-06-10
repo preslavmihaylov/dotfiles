@@ -51,7 +51,8 @@ nnoremap <C-k> :cprev<CR>
 nnoremap <C-l> :cnext<CR>
 
 " map closing quickfix window
-nnoremap <F1> :ccl<CR>
+" nnoremap <F1> :ccl<CR>
+autocmd BufEnter *.go nmap <F1>  :GoDeclsDir<CR>
 
 " create custom mappings for Go files
 autocmd BufEnter *.go nmap <leader>b  :<C-u>call BuildGoFiles()<CR>
