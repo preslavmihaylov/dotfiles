@@ -10,6 +10,9 @@ nnoremap <C-e> :YcmCompleter GoTo<CR>
 nnoremap <C-z> :undo<CR>
 nnoremap <C-u> :redo<CR>
 
+" map find/replace with vim-over
+nmap <C-r> :OverCommandLine<CR>%s/
+
 " map moving tabs
 nnoremap <C-Up> :tabm +1<CR>
 nnoremap <C-Down> :tabm -1<CR>
