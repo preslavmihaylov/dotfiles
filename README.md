@@ -76,8 +76,3 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 ```
-
-### Bash scripts
-Located in `scripts`. This directory includes several bash scripts I use while working.  
-Some of them are leveraged by the vim mappings I have, so removing these might mean that some mappings in vim might not work.
-
