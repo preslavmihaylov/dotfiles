@@ -17,6 +17,14 @@ PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:~/programming/go/bin
 export GOPATH=$HOME/programming/go
 
+# make prompt appear above cursor
+GREEN='\033[1;32m'
+BLUE='\033[1;34m'
+NC='\033[0m'
+
+PROMPT_COMMAND='echo -e "${GREEN}$(whoami)@$(hostname)${NC}:${BLUE}$(dirs)${NC}"'
+PS1='$ '
+
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
