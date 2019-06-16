@@ -22,7 +22,7 @@ GREEN='\033[1;32m'
 BLUE='\033[1;34m'
 NC='\033[0m'
 
-PROMPT_COMMAND='echo -e "${GREEN}$(whoami)@$(hostname)${NC}:${BLUE}$(dirs)${NC}"'
+PROMPT_COMMAND+='echo -e "${GREEN}$(whoami)@$(hostname)${NC}:${BLUE}$(dirs)${NC}"'
 PS1='$ '
 
 if [[ ! $TERM =~ screen ]]; then
