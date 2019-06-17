@@ -33,8 +33,8 @@ nnoremap <A-Left> :vertical resize-5<CR>
 nnoremap <A-Up> :resize+5<CR>
 nnoremap <A-Down> :resize-5<CR>
 
-" map turning off highlighting after search
-nnoremap <Esc><Esc> :noh<CR>
+" map turning off highlighting after search and closing quickfix window
+nnoremap <Esc><Esc> :noh<CR>:ccl<CR>
 
 " go to mark 'm' (I use that as default). Set it by clicking 'mm'
 nnoremap <C-q> :'m<CR>
@@ -50,9 +50,9 @@ vmap <C-_> gc
 nnoremap <C-k> :cprev<CR>
 nnoremap <C-l> :cnext<CR>
 
-" map closing quickfix window
-" nnoremap <F1> :ccl<CR>
-autocmd BufEnter *.go nmap <F1>  :GoDeclsDir<CR>
+" Map showing declarations in go package/file
+autocmd BufEnter *.go nmap <F1>  :GoDecls<CR>
+autocmd BufEnter *.go nmap <F2>  :GoDeclsDir<CR>
 
 " create custom mappings for Go files
 autocmd BufEnter *.go nmap <leader>b  :<C-u>call BuildGoFiles()<CR>
