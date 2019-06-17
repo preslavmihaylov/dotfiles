@@ -92,6 +92,9 @@ autocmd BufWritePre *.py :call StripTrailingWhitespaces()
 autocmd BufWritePre *.js :call StripTrailingWhitespaces()
 autocmd BufWritePre *.go :call StripTrailingWhitespaces()
 
+" add html syntax highlighting for gohtml files
+autocmd BufNewFile,BufRead *.gohtml   set syntax=html
+
 " enable blinking cursor in nvim
 " set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 "   \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
