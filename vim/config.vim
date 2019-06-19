@@ -44,6 +44,9 @@ highlight PmenuSel guibg=#2B2929 guifg=#FFFFFF
 " override default colors for error sign to be red bg and white fg
 highlight Error    guifg=#FFFFFF guibg=#FF0000
 
+" override default colors for warning sign to be orange bg and white fg
+highlight Todo    guifg=#FFFFFF guibg=#FF7700 gui=none
+
 " override default colors for error/warning column
 highlight SignColumn    guibg=#A9A9A9
 
