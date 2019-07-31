@@ -7,6 +7,9 @@ autocmd FileType qf wincmd J
 " new splits open below the current window
 set splitbelow
 
+" don't use swap files. Does more evil than good.
+set noswapfile
+
 " enable cooler colors
 set termguicolors
 
