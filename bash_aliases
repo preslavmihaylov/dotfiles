@@ -2,8 +2,11 @@
 # disable terminal freeze when clicking Ctrl-s
 stty -ixon
 
+# fixes locale related warnings on mac
+export LC_ALL=en_US.UTF-8
+
 alias targz_extract="tar -xvf"
-alias vi=vim
+alias vi=nvim
 alias vim=nvim
 
 # run gdb until program bombs & print stack trace
@@ -18,11 +21,11 @@ PATH=$PATH:~/programming/go/bin
 export GOPATH=$HOME/programming/go
 
 # make prompt appear above cursor
-GREEN='\033[1;32m'
-BLUE='\033[1;34m'
+HOST_CLR='\033[1;32m'
+DIR_CLR='\033[1;34m' # use '\033[1;38;5;208m' for mac
 NC='\033[0m'
 
-PROMPT_COMMAND+='echo -e "${GREEN}$(whoami)@$(hostname)${NC}:${BLUE}$(dirs)${NC}"'
+PROMPT_COMMAND+='echo -e "${HOST_CLR}$(whoami)@$(hostname)${NC}:${DIR_CLR}$(dirs)${NC}"'
 PS1='$ '
 
 if [[ ! $TERM =~ screen ]]; then
