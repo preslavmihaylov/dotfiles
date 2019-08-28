@@ -29,6 +29,6 @@ PROMPT_COMMAND+='echo -e "${HOST_CLR}$(whoami)@$(hostname)${NC}:${DIR_CLR}$(dirs
 PS1='$ '
 
 if [[ ! $TERM =~ screen ]]; then
-    exec tmux
+    tmux && exit
 fi
 
