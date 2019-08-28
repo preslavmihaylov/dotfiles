@@ -9,7 +9,7 @@ The dotfiles include:
 * the bash scripts I use and have added to PATH
 
 ## Dependencies
-I usually use this as a supplemental repository to my [ubuntu-install](https://github.com/preslavmihaylov/ubuntu-install) repo.  
+I usually use this as a supplemental repository to my [default-setups](https://github.com/preslavmihaylov/default-setups) repo.  
 In it, you will find a script for installing all the software I use on my Ubuntu machines.  
 Some of the features here might not work properly without the tools installed from the other repo.
 
