@@ -1,6 +1,3 @@
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "vim/bundle/incsearch.vim"]
 	path = vim/bundle/incsearch.vim
 	url = https://github.com/haya14busa/incsearch.vim
@@ -40,3 +37,6 @@
 [submodule "tmux-gitbar"]
 	path = tmux-gitbar
 	url = https://github.com/arl/tmux-gitbar
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
