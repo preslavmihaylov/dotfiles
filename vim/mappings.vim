@@ -46,6 +46,9 @@ nnoremap <C-c><C-c> :tabclose<CR>
 nmap <C-_> gcc
 vmap <C-_> gc
 
+nnoremap <C-f> :GFiles<CR>
+nnoremap <C-g> :Ag<CR>
+
 " map C-k/C-l to traverse quickfix window
 nnoremap <C-k> :cprev<CR>
 nnoremap <C-l> :cnext<CR>
@@ -77,11 +80,6 @@ autocmd BufEnter * nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
 autocmd BufEnter *.go nmap <C-a>  :GoDefPop<CR>
 autocmd BufEnter *.go nmap <C-d>  :GoDef<CR>
 autocmd BufEnter *.go nmap <leader>s  :GoDefStack<CR>
-
-" map searching for symbol in all files
-nnoremap <F2> :call SplitTab()<CR>
-    \ *
-    \ :exec("Search ".expand("<cword>"))<CR>
 
 " when finding a definition with cscope, open results in a new tab
 nnoremap <F3> :call SplitTab()<CR>

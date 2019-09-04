@@ -32,8 +32,5 @@ endfun
 
 command! -nargs=0 ShowTabsToggle :call ShowTabsToggle()
 
-" custom command for performing search in all source files
-command! -nargs=1 Search vimgrep <args> **/*.c **/*.cpp **/*.h **/*.json | cw
-
 " find-replace current word under cursor with given parameter
 command! -nargs=1 ReplaceWith :exec("%s/\\<".expand("<cword>")."\\>/<args>/gc")

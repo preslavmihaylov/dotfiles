@@ -48,20 +48,6 @@ let g:ycm_key_list_stop_completion = ['<CR>']
 "     \ 'vim': 1
 "     \}
 
-""" -------------------- ctrl-p -------------------------
-" default command for starting ctrl-p
-let g:ctrlp_map='<c-f>'
-
-" override default command for exiting ctrl-p prompt
-let g:ctrlp_prompt_mappings = { 'PrtExit()': ['<c-f>', '<c-c>'],
-	\ 'ToggleType(1)': ['c-down>']  }
-
-" ctrl-p search directory is CWD
-let g:ctrlp_working_path_mode='w'
-
-" ctrl-p will include dotfiles in its search
-let g:ctrlp_show_hidden=1
-
 """ -------------------- nerdtree -------------------------
 " nerd tree opens files in different tabs
 " let g:NERDTreeMapOpenInTab='<ENTER>'
@@ -83,6 +69,12 @@ endfunction
 
 " map toggling nerd tree
 nnoremap <C-p> :call OpenNERDTree()<CR>
+
+""" -------------------- fzf-vim -------------------------
+set rtp+=~/.fzf
+
+" Customize fzf colors to match colorscheme
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, { 'options': ['--color', 'fg:252,bg:233,hl:#ff8787,fg+:252,bg+:235,hl+:#ff0000,info:0,prompt:161,spinner:135,pointer:135,marker:118'] }, <bang>0)
 
 """ -------------------- gutentags -------------------------
 " enable ctags
@@ -158,3 +150,4 @@ let g:go_term_mode = "split above"
 
 " More verbose output on failed tests in quickfix window
 let g:go_test_show_name = 1
+
