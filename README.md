@@ -9,7 +9,7 @@ The dotfiles include:
 * the bash scripts I use and have added to PATH
 
 ## Dependencies
-I usually use this as a supplemental repository to my [ubuntu-install](https://github.com/preslavmihaylov/ubuntu-install) repo.  
+I usually use this as a supplemental repository to my [default-setups](https://github.com/preslavmihaylov/default-setups) repo.  
 In it, you will find a script for installing all the software I use on my Ubuntu machines.  
 Some of the features here might not work properly without the tools installed from the other repo.
 
@@ -26,7 +26,7 @@ These are the tools you will need to, surely, install:
 * nodejs
 * go
 
-All of these can be installed using the `apt-get install` utility. If you would like to find the exact commands, check out [ubuntu-install](https://github.com/preslavmihaylov/ubuntu-install)
+All of these can be installed using the `apt-get install` utility. If you would like to find the exact commands, check out [default-setups](https://github.com/preslavmihaylov/default-setups)
 
 If you found out I missed a dependency, feel free to submit a PR. :)
 
