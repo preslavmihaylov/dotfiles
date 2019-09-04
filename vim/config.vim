@@ -25,6 +25,9 @@ set mouse=a
 " Format status line to show current file
 set statusline=\ %f
 
+" line number of cursor blinks
+set cursorline
+
 " Format status line to include CWD
 " set statusline+=\ \ CWD:%{getcwd()}
 
