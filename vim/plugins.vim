@@ -130,6 +130,9 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
 let g:go_metalinter_autosave = 1
 
+" don't jump to errors after metalinter is invoked
+let g:go_jump_to_error = 0
+
 " default metalinter is deprecated. Change to better alternative
 let g:go_metalinter_command='golangci-lint'
 
