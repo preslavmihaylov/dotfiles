@@ -138,6 +138,10 @@ let g:go_jump_to_error = 0
 " default metalinter is deprecated. Change to better alternative
 let g:go_metalinter_command='golangci-lint'
 
+" use gopls for go to definition and get info commands
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
 " vim-go debug: show shell commands being executed
 " let g:go_debug=['shell-commands']
 
