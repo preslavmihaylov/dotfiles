@@ -57,6 +57,8 @@ let g:ycm_key_list_stop_completion = ['<CR>']
 
 let g:NERDTreeWinSize=40
 
+let NERDTreeShowHidden=1
+
 " if NERDTreeTab is open --> NERDTreeToggle, else NERDTreeFind
 function! OpenNERDTree()
     if exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
