@@ -24,3 +24,4 @@ cp -r $MYDIR/tmux-gitbar ~/.tmux-gitbar
 # YCM plugin install
 $MYDIR/install_ycm.sh
 
+echo "dotfiles finished installing!"
