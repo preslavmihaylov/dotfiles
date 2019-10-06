@@ -107,6 +107,7 @@ autocmd BufEnter *.cpp nested :TagbarOpen
 autocmd BufEnter *.c nested :TagbarOpen
 autocmd BufEnter *.py nested :TagbarOpen
 autocmd BufEnter *.go nested :TagbarOpen
+autocmd BufEnter *.js nested :TagbarOpen
 
 """ -------------------- vim-go -------------------------
 " all errors are shown in the quickfix window
@@ -131,6 +132,9 @@ let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 " let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
 let g:go_metalinter_autosave = 1
+
+" run go imports on file save
+let g:go_fmt_command = "goimports"
 
 " don't jump to errors after metalinter is invoked
 let g:go_jump_to_error = 0
