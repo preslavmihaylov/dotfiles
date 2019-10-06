@@ -71,15 +71,15 @@ autocmd BufEnter *.go nmap <leader>cr  <Plug>(go-referrers)
 autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
 autocmd BufEnter *.go nmap <leader>cs  <Plug>(go-callstack)
 autocmd BufEnter *.go nmap <leader>l  <Plug>(go-lint)
+autocmd BufEnter *.go nmap <leader>s  :GoDefStack<CR>
 
-" map tag pop and push
+" map tag pop and push for all files
 autocmd BufEnter * nnoremap <C-a> <C-o>
-autocmd BufEnter * nnoremap <C-d> :exec("tag ".expand("<cword>"))<CR>
+autocmd BufEnter * nnoremap <C-d> :YcmCompleter GoTo<CR>
 
 " remap tag expand/pop commands for go files to use vim-go alternatives
 autocmd BufEnter *.go nmap <C-a>  :GoDefPop<CR>
 autocmd BufEnter *.go nmap <C-d>  :GoDef<CR>
-autocmd BufEnter *.go nmap <leader>s  :GoDefStack<CR>
 
 " when finding a definition with cscope, open results in a new tab
 nnoremap <F3> :call SplitTab()<CR>
