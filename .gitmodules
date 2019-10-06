@@ -43,3 +43,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/dense-analysis/ale
+[submodule "vim/bundle/vim-jsx-pretty"]
+	path = vim/bundle/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty
