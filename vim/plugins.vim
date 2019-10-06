@@ -1,21 +1,25 @@
 """ -------------------- Pathogen -------------------------
+" Plugin manager for vim
 
 " start pathogen plugin manager
 execute pathogen#infect()
 execute pathogen#helptags()
 
-""" -------------------- delimitMate -------------------------
-let delimitMate_backspace = 1
-
 """ -------------------- vim-commentary -------------------------
+" Comment-uncomment line for any language
+
 " override default comment style for cpp files
 autocmd FileType cpp setlocal commentstring=//\ %s
 
 """ -------------------- todo-lists -------------------------
+" Todo list plugin. Supports *.todo files
+
 " don't move items when marked as done
 let g:VimTodoListsMoveItems = 0
 
 """ -------------------- incsearch.vim -------------------------
+" Highlight search results while typing
+
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -24,6 +28,8 @@ map g/ <Plug>(incsearch-stay)
 let g:incsearch#auto_nohlsearch = 1
 
 """ -------------------- YouCompleteMe -------------------------
+" Auto-complete engine supporting multiple languages
+
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " disable YCM on startup
@@ -49,6 +55,8 @@ let g:ycm_key_list_stop_completion = ['<CR>']
 "     \}
 
 """ -------------------- nerdtree -------------------------
+" Project explorer for vim
+
 " nerd tree opens files in different tabs
 " let g:NERDTreeMapOpenInTab='<ENTER>'
 
@@ -73,12 +81,16 @@ endfunction
 nnoremap <C-p> :call OpenNERDTree()<CR>
 
 """ -------------------- fzf-vim -------------------------
+" Fuzzy-finder for vim
+
 set rtp+=~/.fzf
 
 " Customize fzf colors to match colorscheme
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, { 'options': ['--color', 'fg:252,bg:233,hl:#ff8787,fg+:252,bg+:235,hl+:#ff0000,info:0,prompt:161,spinner:135,pointer:135,marker:118'] }, <bang>0)
 
 """ -------------------- gutentags -------------------------
+" Auto-generate ctags file without user intervention
+
 " enable ctags
 set tags=tags;
 
@@ -99,6 +111,7 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 let g:gutentags_plus_switch = 1
 
 """ -------------------- tagbar -------------------------
+" Source file outline based on ctags-generated files
 
 let g:tagbar_autoclose = 0
 let g:tagbar_width = 43
@@ -109,7 +122,30 @@ autocmd BufEnter *.py nested :TagbarOpen
 autocmd BufEnter *.go nested :TagbarOpen
 autocmd BufEnter *.js nested :TagbarOpen
 
+""" -------------------- vim-jsx-pretty -------------------------
+" Syntax highlighting for JSX (JS+HTML templating syntax)
+
+""" -------------------- vim-prettier -------------------------
+" Auto-format plugin for html/css/js/etc.js files
+
+" run prettier on autosave
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+""" -------------------- ALE -------------------------
+" Generic Linters aggregator
+
+let g:ale_linters = {
+\   'python': ['flake8', 'pylint'],
+\   'javascript': ['eslint'],
+\   'typescript': ['tslint'],
+\   'go': ['golint'],
+\   'vue': ['eslint']
+\}
+
 """ -------------------- vim-go -------------------------
+" Batteries-included plugin for Golang
+
 " all errors are shown in the quickfix window
 let g:go_list_type = "quickfix"
 
@@ -130,8 +166,8 @@ let g:go_highlight_generate_tags = 1
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
 " let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
-let g:go_metalinter_autosave = 1
+" let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
+" let g:go_metalinter_autosave = 1
 
 " run go imports on file save
 let g:go_fmt_command = "goimports"
