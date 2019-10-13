@@ -54,6 +54,15 @@ nnoremap <C-g> :Ag<CR>
 nnoremap <C-k> :cprev<CR>
 nnoremap <C-l> :cnext<CR>
 
+" fugitive.vim mappings
+nmap <leader>gb :Gblame<CR>
+nmap <leader>gr :Gread<CR>
+nmap <leader>gw :Gwrite<CR>
+nmap <leader>gd :tabe<CR>:Gdiffsplit<CR>
+nmap <leader>gs :tabe<CR>:Gstatus<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gl :tabe<CR>:Glog<CR>
+
 " Map showing declarations in go package/file
 autocmd BufEnter *.go nmap <F1>  :GoDecls<CR>
 autocmd BufEnter *.go nmap <F2>  :GoDeclsDir<CR>
