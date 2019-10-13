@@ -42,7 +42,8 @@ nnoremap <C-q> :'m<CR>
 " mapping for closing the currently open tab
 nnoremap <C-c><C-c> :tabclose<CR>
 
-" Ctrl-/ comments/uncomments line(s) in normal and visual mode
+" Ctrl-/ comments/uncomments line(s) in normal and visual mode.
+" Doesn't work on mac. Use Ctrl-_ instead.
 nmap <C-_> gcc
 vmap <C-_> gc
 
