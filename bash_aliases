@@ -19,6 +19,11 @@ alias gdb_trace="gdb --batch --ex r --ex bt --ex q --args"
 # Add all my scripts to path
 PATH=$PATH:~/scripts
 
+# Run background scripts
+for i in $(ls -d ~/scripts/.background/*); do
+    bash $i &
+done
+
 # Setup go environment
 PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:~/programming/go/bin
