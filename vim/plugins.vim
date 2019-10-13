@@ -136,7 +136,9 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 " Generic Linters aggregator
 
 let g:ale_linters = {
-\   'python': ['flake8', 'pylint'],
+\   'sh': [],
+\   'bash': [],
+\   'python': [],
 \   'javascript': ['eslint'],
 \   'typescript': ['tslint'],
 \   'go': ['golint'],
