@@ -154,6 +154,12 @@ let g:airline#extensions#tabline#enabled = 1
 " use vim-airline molokai theme
 let g:airline_theme='molokai'
 
+" don't show open buffers in tabline. Doesn't show closed tabs as well
+let g:airline#extensions#tabline#show_buffers = 0
+
+" enable ALE integration
+let g:airline#extensions#ale#enabled = 1
+
 """ -------------------- vim-go -------------------------
 " Batteries-included plugin for Golang
 
