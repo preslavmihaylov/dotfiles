@@ -145,6 +145,15 @@ let g:ale_linters = {
 \   'vue': ['eslint']
 \}
 
+""" -------------------- vim-airline -------------------------
+" cooler status line for vim
+
+" enable smarter tab line
+let g:airline#extensions#tabline#enabled = 1
+
+" use vim-airline molokai theme
+let g:airline_theme='molokai'
+
 """ -------------------- vim-go -------------------------
 " Batteries-included plugin for Golang
 
