@@ -98,8 +98,6 @@ let loaded_matchparen = 0
 autocmd BufWritePre *.cpp :call StripTrailingWhitespaces()
 autocmd BufWritePre *.c :call StripTrailingWhitespaces()
 autocmd BufWritePre *.py :call StripTrailingWhitespaces()
-autocmd BufWritePre *.js :call StripTrailingWhitespaces()
-autocmd BufWritePre *.go :call StripTrailingWhitespaces()
 
 " add html syntax highlighting for gohtml files
 autocmd BufNewFile,BufRead *.gohtml   set syntax=html
