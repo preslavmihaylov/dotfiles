@@ -120,7 +120,7 @@ autocmd BufEnter *.cpp nested :TagbarOpen
 autocmd BufEnter *.c nested :TagbarOpen
 autocmd BufEnter *.py nested :TagbarOpen
 autocmd BufEnter *.go nested :TagbarOpen
-autocmd BufEnter *.js nested :TagbarOpen
+" autocmd BufEnter *.js nested :TagbarOpen
 
 """ -------------------- vim-jsx-pretty -------------------------
 " Syntax highlighting for JSX (JS+HTML templating syntax)
@@ -156,6 +156,9 @@ let g:airline_theme='molokai'
 
 " don't show open buffers in tabline. Doesn't show closed tabs as well
 let g:airline#extensions#tabline#show_buffers = 0
+
+" don't show open buffers. Adds too much noise
+let g:airline#extensions#tabline#show_splits = 0
 
 " enable ALE integration
 let g:airline#extensions#ale#enabled = 1
