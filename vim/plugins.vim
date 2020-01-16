@@ -50,9 +50,9 @@ set completeopt-=preview
 let g:ycm_key_list_stop_completion = ['<CR>']
 
 " blacklist certain filetypes from plugin
-" let g:ycm_filetype_blacklist = {
-"     \ 'vim': 1
-"     \}
+let g:ycm_filetype_blacklist = {
+    \ 'javascript': 1
+    \}
 
 """ -------------------- nerdtree -------------------------
 " Project explorer for vim
@@ -125,6 +125,12 @@ autocmd BufEnter *.go nested :TagbarOpen
 """ -------------------- vim-jsx-pretty -------------------------
 " Syntax highlighting for JSX (JS+HTML templating syntax)
 
+""" -------------------- vim-javascript -------------------------
+" Syntax highlighting plugin for Javascript
+
+" enable syntax highlighting for flow
+let g:javascript_plugin_flow = 1
+
 """ -------------------- vim-prettier -------------------------
 " Auto-format plugin for html/css/js/etc.js files
 
@@ -139,7 +145,7 @@ let g:ale_linters = {
 \   'sh': [],
 \   'bash': [],
 \   'python': [],
-\   'javascript': ['eslint'],
+\   'javascript': ['flow-language-server'],
 \   'typescript': ['tslint'],
 \   'go': ['golint'],
 \   'vue': ['eslint']
