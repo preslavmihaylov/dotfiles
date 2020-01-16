@@ -33,8 +33,10 @@ If you found out I missed a dependency, feel free to submit a PR. :)
 ## Installation
 
 ```
-git clone --recurse-submodules https://github.com/preslavmihaylov/dotfiles
-cd dotfiles && ./install.sh
+git clone https://github.com/preslavmihaylov/dotfiles
+cd dotfiles 
+git submodule update --init --recursive
+./install.sh
 ```
 
 ## Customizing some options

@@ -6,9 +6,6 @@ MYDIR="$(dirname -- "$0")"
 # .vimrc install
 cp $MYDIR/vimrc ~/.vimrc
 
-# install YCM submodules
-cd $MYDIR/vim/bundle/YouCompleteMe && git submodule update --init --recursive
-
 # .vim install
 rm -rf ~/.vim || true
 cp -r $MYDIR/vim ~/.vim
