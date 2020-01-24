@@ -151,6 +151,12 @@ let g:ale_linters = {
 \   'vue': ['eslint']
 \}
 
+" only run explicit linters specified above
+let g:ale_linters_explicit = 1
+
+""" -------------------- vim-polyglot -------------------------
+" syntax highlighting plugin for all popular and less popular programming languages
+
 """ -------------------- vim-airline -------------------------
 " cooler status line for vim
 
