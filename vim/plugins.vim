@@ -221,7 +221,7 @@ let g:go_info_mode='gopls'
 " let g:go_auto_type_info = 1
 
 " automatically highlight variable your cursor is on
-let g:go_auto_sameids = 1
+let g:go_auto_sameids = 0
 
 " adjust quickfix window height
 let g:go_list_height = 8
