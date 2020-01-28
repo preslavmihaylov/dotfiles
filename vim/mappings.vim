@@ -48,7 +48,7 @@ nmap <C-_> gcc
 vmap <C-_> gc
 
 nnoremap <C-f> :GFiles<CR>
-nnoremap <C-g> :Ag<CR>
+nnoremap <C-g> :AgNoFiles<CR>
 
 " map C-k/C-l to traverse quickfix window
 nnoremap <C-k> :cprev<CR>

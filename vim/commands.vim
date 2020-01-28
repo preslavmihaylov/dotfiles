@@ -34,3 +34,7 @@ command! -nargs=0 ShowTabsToggle :call ShowTabsToggle()
 
 " find-replace current word under cursor with given parameter
 command! -nargs=1 ReplaceWith :exec("%s/\\<".expand("<cword>")."\\>/<args>/gc")
+
+" Make Ag (Ctrl-G) not include filenames in search output
+command! -bang -nargs=* AgNoFiles call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
