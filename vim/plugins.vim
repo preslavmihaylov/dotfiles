@@ -131,13 +131,6 @@ autocmd BufEnter *.go nested :TagbarOpen
 " enable syntax highlighting for flow
 let g:javascript_plugin_flow = 1
 
-""" -------------------- vim-prettier -------------------------
-" Auto-format plugin for html/css/js/etc.js files
-
-" run prettier on autosave
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
 """ -------------------- ALE -------------------------
 " Generic Linters aggregator
 
@@ -145,14 +138,17 @@ let g:ale_linters = {
 \   'sh': [],
 \   'bash': [],
 \   'python': [],
-\   'javascript': ['flow-language-server'],
+\   'javascript': ['flow-language-server', 'eslint'],
 \   'typescript': ['tslint'],
 \   'go': ['golint'],
 \   'vue': ['eslint']
 \}
 
+let g:ale_fixers = {'javascript': ['eslint']}
+
 " only run explicit linters specified above
 let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
 
 """ -------------------- vim-polyglot -------------------------
 " syntax highlighting plugin for all popular and less popular programming languages
