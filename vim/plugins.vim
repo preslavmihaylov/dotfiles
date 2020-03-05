@@ -35,11 +35,6 @@ let g:incsearch#auto_nohlsearch = 1
 " disable YCM on startup
 " let g:loaded_youcompleteme = 0
 
-" the first option (commented out) disables auto-complete
-" the second one, triggers it only on '->' and '.'
-" let g:ycm_auto_trigger = 0
-" let g:ycm_min_num_of_chars_for_completion = 200
-let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_server_python_interpreter = 'python3'
 
 " remove annoying preview window appearing on top of vim
@@ -53,6 +48,12 @@ let g:ycm_key_list_stop_completion = ['<CR>']
 let g:ycm_filetype_blacklist = {
     \ 'javascript': 1
     \}
+
+" disable YCM from auto-popping up on each click
+let g:ycm_min_num_of_chars_for_completion = 99
+
+" Specify Ctrl-] as key to invoke YCM completion
+let g:ycm_key_invoke_completion = '<C-]>'
 
 """ -------------------- nerdtree -------------------------
 " Project explorer for vim
