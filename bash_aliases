@@ -9,15 +9,23 @@ alias targz_extract="tar -xvf"
 alias vi=nvim
 alias vim=nvim
 
+# lite vim (no plugins or vimrc)
+alias lvim="vim -u NONE"
+
+alias docker_stop_all='docker stop $(docker ps -a -q)'
+alias docker_rm_all='docker rm $(docker ps -a -q)'
+
 if [ $ARCH = 'Darwin' ]; then
     alias chrome="open -a \"Google Chrome\""
+
+    # make macos use openssl for cpp compiles
+    export LDFLAGS="-L/usr/local/opt/openssl/lib"
+    export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/include -L/usr/local/lib"
+    export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 fi
 
 # run gdb until program bombs & print stack trace
 alias gdb_trace="gdb --batch --ex r --ex bt --ex q --args"
-
-# Add all my scripts to path
-PATH=$PATH:~/scripts
 
 # Run background scripts
 for i in $(ls -d ~/scripts/.background/*); do
@@ -36,6 +44,7 @@ export FZF_DEFAULT_OPTS='
 # make prompt appear above cursor
 HOST_CLR='\033[1;32m'
 
+# make prompt colorful
 if [ $ARCH = 'Darwin' ]; then
     DIR_CLR='\033[1;38;5;208m'
 else 
