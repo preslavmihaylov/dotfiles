@@ -9,6 +9,15 @@ alias targz_extract="tar -xvf"
 alias vi=nvim
 alias vim=nvim
 
+countloc() {
+    if [ -z $1 ]; then
+        echo "Usage: ${FUNCNAME[0]} <filetype>"
+        return 
+    fi
+
+    find . -name "*.$1" | xargs wc -l
+}
+
 # lite vim (no plugins or vimrc)
 alias lvim="vim -u NONE"
 
