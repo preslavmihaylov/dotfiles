@@ -6,8 +6,14 @@ stty -ixon
 export LC_ALL=en_US.UTF-8
 
 alias targz_extract="tar -xvf"
+
+# lite vim (no plugins or vimrc)
+alias lvim="vim -u NONE"
 alias vi=nvim
 alias vim=nvim
+
+alias docker_stop_all='docker stop $(docker ps -a -q)'
+alias docker_rm_all='docker rm $(docker ps -a -q)'
 
 countloc() {
     if [ -z $1 ]; then
@@ -17,12 +23,6 @@ countloc() {
 
     find . -name "*.$1" | xargs wc -l
 }
-
-# lite vim (no plugins or vimrc)
-alias lvim="vim -u NONE"
-
-alias docker_stop_all='docker stop $(docker ps -a -q)'
-alias docker_rm_all='docker rm $(docker ps -a -q)'
 
 if [ $ARCH = 'Darwin' ]; then
     alias chrome="open -a \"Google Chrome\""
