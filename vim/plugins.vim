@@ -172,6 +172,14 @@ let g:airline#extensions#tabline#show_splits = 0
 " enable ALE integration
 let g:airline#extensions#ale#enabled = 1
 
+""" -------------------- md-img-paste.vim ---------------
+" Let's you pate images from clipboard to markdown file
+
+
+" there are some defaults for image directory and image name, you can change them
+let g:mdip_imgdir = 'images'
+let g:mdip_imgname = 'image'
+
 """ -------------------- vim-go -------------------------
 " Batteries-included plugin for Golang
 

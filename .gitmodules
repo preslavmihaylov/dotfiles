@@ -58,3 +58,6 @@
 [submodule "vim/bundle/vim-polyglot"]
 	path = vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule "vim/bundle/md-img-paste.vim"]
+	path = vim/bundle/md-img-paste.vim
+	url = https://github.com/ferrine/md-img-paste.vim
