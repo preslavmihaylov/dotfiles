@@ -51,7 +51,7 @@ nnoremap <C-f> :GFiles<CR>
 nnoremap <C-g> :AgNoFiles<CR>
 
 " paste image from clipboard on C-i
-autocmd FileType markdown nmap <buffer><silent> <C-i> :call mdip#MarkdownClipboardImage()<CR>
+autocmd FileType markdown nmap <buffer><silent> <C-k> :call mdip#MarkdownClipboardImage()<CR>
 
 " map C-k/C-l to traverse quickfix window
 nnoremap <C-k> :cprev<CR>
