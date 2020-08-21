@@ -15,6 +15,7 @@ alias vim=nvim
 alias docker_stop_all='docker stop $(docker ps -a -q)'
 alias docker_rm_all='docker rm $(docker ps -a -q)'
 
+alias json_prettify="python -m json.tool"
 countloc() {
     if [ -z $1 ]; then
         echo "Usage: ${FUNCNAME[0]} <filetype>"
