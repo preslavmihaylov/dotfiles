@@ -5,7 +5,7 @@ set clipboard+=unnamedplus
 autocmd FileType qf wincmd J
 
 " enable native vim spell checker
-set spelllang=en_us
+set spell spelllang=en_us
 
 " new splits open below the current window
 set splitbelow
