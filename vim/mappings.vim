@@ -2,9 +2,8 @@
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
-" map YCM's goto command
-" (similar to <C-d>, but works better for header files)
-nnoremap <C-e> :YcmCompleter GoTo<CR>
+" map Ctrl+e to invoke auto completion
+inoremap <C-e> <C-x><C-o>
 
 " map undo/redo
 nnoremap <C-z> :undo<CR>
@@ -78,12 +77,12 @@ autocmd BufEnter *.go nmap <leader>tt <Plug>(go-test-func)
 autocmd BufEnter *.go nmap <leader>c  <Plug>(go-coverage-toggle)
 autocmd BufEnter *.go nmap <leader>q  <Plug>(go-alternate-edit)
 autocmd BufEnter *.go nmap <leader>i  <Plug>(go-info)
+autocmd BufEnter *.go nmap <leader>ii  <Plug>(go-implements)
 autocmd BufEnter *.go nmap <leader>d  <Plug>(go-doc)
 autocmd BufEnter *.go nmap <leader>ci  <Plug>(go-describe)
 autocmd BufEnter *.go nmap <leader>cr  <Plug>(go-referrers)
 autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
 autocmd BufEnter *.go nmap <leader>cs  <Plug>(go-callstack)
-autocmd BufEnter *.go nmap <leader>l  <Plug>(go-lint)
 autocmd BufEnter *.go nmap <leader>s  :GoDefStack<CR>
 
 " map tag pop and push for all files

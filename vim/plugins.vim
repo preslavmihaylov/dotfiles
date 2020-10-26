@@ -46,7 +46,8 @@ let g:ycm_key_list_stop_completion = ['<CR>']
 
 " blacklist certain filetypes from plugin
 let g:ycm_filetype_blacklist = {
-    \ 'javascript': 1
+    \ 'javascript': 1,
+    \ 'go': 1
     \}
 
 " disable YCM from auto-popping up on each click

@@ -1,6 +1,9 @@
 " integrate vim clipboard with system clipboard
 set clipboard+=unnamedplus
 
+set omnifunc=syntaxcomplete#Complete
+set completeopt=menu,menuone,noselect,noinsert
+
 " quickfix window is always at the bottom
 autocmd FileType qf wincmd J
 
