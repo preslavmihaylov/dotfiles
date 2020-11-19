@@ -14,6 +14,11 @@ cp -r $MYDIR/vim ~/.vim
 rm -rf ~/.config/nvim || true
 cp -r $MYDIR/nvim ~/.config/nvim
 
+# alacritty install (sensible for mac only)
+if [ $ARCH = 'Darwin' ]; then
+    cp -r $MYDIR/alacritty ~/.config/alacritty
+fi
+
 # .bash_aliases install
 cp $MYDIR/bash_aliases ~/.bash_aliases
 if [ -f ~/.zshrc ]; then
