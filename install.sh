@@ -16,6 +16,9 @@ cp -r $MYDIR/nvim ~/.config/nvim
 
 # .bash_aliases install
 cp $MYDIR/bash_aliases ~/.bash_aliases
+if [ -f ~/.zshrc ]; then
+    echo "[ -f ~/.bash_aliases ] && source ~/.bash_aliases" >> ~/.zshrc
+fi
 
 # tmux conf install
 cp $MYDIR/tmux.conf ~/.tmux.conf
