@@ -12,7 +12,7 @@ cp -r $MYDIR/vim ~/.vim
 
 # nvim install
 rm -rf ~/.config/nvim || true
-cp -r $MYDIR/nvim ~/.config/
+cp -r $MYDIR/nvim ~/.config/nvim
 
 # .bash_aliases install
 cp $MYDIR/bash_aliases ~/.bash_aliases
