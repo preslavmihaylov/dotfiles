@@ -90,6 +90,9 @@ set rtp+=~/.fzf
 " Customize fzf colors to match colorscheme
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, { 'options': ['--color', 'fg:252,bg:233,hl:#ff8787,fg+:252,bg+:235,hl+:#ff0000,info:0,prompt:161,spinner:135,pointer:135,marker:118'] }, <bang>0)
 
+" Pin the fzf window at the bottom
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.3, 'xoffset': 0, 'yoffset': 100 } }
+
 """ -------------------- gutentags -------------------------
 " Auto-generate ctags file without user intervention
 
