@@ -142,11 +142,13 @@ let g:ale_linters = {
 \   'python': [],
 \   'javascript': ['flow-language-server', 'eslint'],
 \   'typescript': ['tslint'],
-\   'go': ['golint'],
+\   'go': ['golint', 'gopls'],
 \   'vue': ['eslint']
 \}
 
 let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_sign_warning='!'
+let g:ale_sign_error='!'
 
 " only run explicit linters specified above
 let g:ale_linters_explicit = 1
