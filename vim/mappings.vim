@@ -84,7 +84,7 @@ autocmd BufEnter *.go nmap <leader>cr  <Plug>(go-referrers)
 autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
 autocmd BufEnter *.go nmap <leader>cs  <Plug>(go-callstack)
 autocmd BufEnter *.go nmap <leader>s  :GoDefStack<CR>
-autocmd BufEnter *.go nmap <leader>dd :GoDiagnostics<CR>
+autocmd BufEnter *.go nmap <leader>dd :GoVet<CR>
 
 " map tag pop and push for all files
 autocmd BufEnter * nnoremap <C-a> <C-o>
