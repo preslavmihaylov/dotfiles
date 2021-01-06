@@ -5,6 +5,9 @@ stty -ixon
 
 export LC_ALL=en_US.UTF-8
 
+# use non-black color for `null` values for the jq command
+export JQ_COLORS="1;35:0;39:0;39:0;39:0;32:1;39:1;39"
+
 alias targz_extract="tar -xvf"
 
 # lite vim (no plugins or vimrc)
