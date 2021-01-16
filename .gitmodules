@@ -40,3 +40,9 @@
 [submodule "vim/bundle/md-img-paste.vim"]
 	path = vim/bundle/md-img-paste.vim
 	url = https://github.com/ferrine/md-img-paste.vim
+[submodule "vim/bundle/coc.nvim"]
+	path = vim/bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+[submodule "vim/bundle/gruvbox"]
+	path = vim/bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox
