@@ -10,21 +10,9 @@
 [submodule "vim/bundle/vim-todo-lists"]
 	path = vim/bundle/vim-todo-lists
 	url = https://github.com/aserebryakov/vim-todo-lists
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule "vim/bundle/vim-gutentags"]
-	path = vim/bundle/vim-gutentags
-	url = https://github.com/ludovicchabant/vim-gutentags
-[submodule "vim/bundle/gutentags_plus"]
-	path = vim/bundle/gutentags_plus
-	url = https://github.com/skywind3000/gutentags_plus
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go
@@ -37,12 +25,6 @@
 [submodule "vim/bundle/fzf.vim"]
 	path = vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
-	url = https://github.com/dense-analysis/ale
-[submodule "vim/bundle/vim-jsx-pretty"]
-	path = vim/bundle/vim-jsx-pretty
-	url = https://github.com/MaxMEllon/vim-jsx-pretty
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
@@ -52,9 +34,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
 [submodule "vim/bundle/vim-polyglot"]
 	path = vim/bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
