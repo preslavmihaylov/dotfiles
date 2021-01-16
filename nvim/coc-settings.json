@@ -1,0 +1,23 @@
+{
+  "suggest.noselect": false,
+  "diagnostic.errorSign": "✘",
+  "diagnostic.warningSign": "!",
+  "diagnostic.infoSign": "?",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx",
+    "graphql",
+    "go"
+  ],
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [".root", "go.mod"],
+      "filetypes": ["go"]
+    }
+  }
+}
