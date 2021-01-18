@@ -7,6 +7,7 @@ colorscheme gruvbox
 autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
 autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
 autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
+autocmd ColorScheme * highlight SignColumn guibg=#adadad
 
 " Some servers have issues with backup files, see #649.
 set nobackup
