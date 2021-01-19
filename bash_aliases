@@ -15,6 +15,10 @@ alias lvim="vim -u NONE"
 alias vi=nvim
 alias vim=nvim
 
+# change default editors for git & similar cli tools
+export VISUAL=nvim
+export EDITOR=nvim
+
 alias docker_stop_all='docker stop $(docker ps -a -q)'
 alias docker_rm_all='docker rm $(docker ps -a -q)'
 
@@ -35,15 +39,12 @@ if [ $ARCH = 'Darwin' ]; then
     export LDFLAGS="-L/usr/local/opt/openssl/lib"
     export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/include -L/usr/local/lib"
     export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+    precmd() { eval "$PROMPT_COMMAND" }
 fi
 
 # run gdb until program bombs & print stack trace
 alias gdb_trace="gdb --batch --ex r --ex bt --ex q --args"
-
-# Run background scripts
-for i in $(ls -d ~/scripts/.background/*); do
-    bash $i &
-done
 
 # Setup go environment
 PATH=$PATH:/usr/local/go/bin
@@ -55,7 +56,7 @@ export FZF_DEFAULT_OPTS='
 --color info:144,prompt:161,spinner:135,pointer:135,marker:118'
 
 # make prompt appear above cursor
-HOST_CLR='\033[1;32m'
+HOST_CLR='\033[1;49;92m'
 
 # make prompt colorful
 if [ $ARCH = 'Darwin' ]; then
@@ -69,7 +70,8 @@ NC='\033[0m'
 PROMPT_COMMAND='echo -e "${HOST_CLR}$(whoami)@kingslanding${NC}:${DIR_CLR}$(dirs)${NC}"'
 PS1='$ '
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ ! $TERM =~ screen ]]; then
     tmux && exit
