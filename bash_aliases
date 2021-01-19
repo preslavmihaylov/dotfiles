@@ -18,6 +18,7 @@ alias vim=nvim
 # change default editors for git & similar cli tools
 export VISUAL=nvim
 export EDITOR=nvim
+export GIT_EDITOR=nvim
 
 alias docker_stop_all='docker stop $(docker ps -a -q)'
 alias docker_rm_all='docker rm $(docker ps -a -q)'
