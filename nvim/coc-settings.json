@@ -9,11 +9,14 @@
     "typescript",
     "typescriptreact",
     "json",
+    "css",
+    "scss",
     "javascriptreact",
     "typescript.tsx",
     "graphql",
     "go"
   ],
+  "coc.preferences.hoverTarget": "float",
   "languageserver": {
     "golang": {
       "command": "gopls",
