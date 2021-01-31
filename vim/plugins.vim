@@ -96,6 +96,9 @@ let g:go_metalinter_enabled = []
 " don't jump to errors after metalinter is invoked
 let g:go_jump_to_error = 0
 
+" run go imports on file save
+let g:go_fmt_command = "goimports"
+
 " vim-go debug: show shell commands being executed
 " let g:go_debug=['shell-commands']
 
