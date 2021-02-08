@@ -34,6 +34,9 @@ countloc() {
 }
 
 if [ $ARCH = 'Darwin' ]; then
+    # use emacs key bindings for the terminal
+    set -o emacs
+
     alias chrome="open -a \"Google Chrome\""
 
     # make macos use openssl for cpp compiles
