@@ -30,6 +30,6 @@ cp $MYDIR/tmux.conf ~/.tmux.conf
 cp -r $MYDIR/tmux-gitbar ~/.tmux-gitbar
 
 # Install coc extensions
-vim -c 'CocInstall -sync coc-json coc-html coc-css coc-tsserver coc-prettier coc-go coc-styled-components|q'
+vim -c 'CocInstall -sync coc-json coc-html coc-css coc-tsserver coc-prettier coc-go coc-styled-components coc-graphql|q'
 
 echo "dotfiles finished installing!"
