@@ -16,6 +16,7 @@
     "graphql",
     "go"
   ],
+  "javascript.suggestionActions.enabled": false,
   "coc.preferences.hoverTarget": "float",
   "languageserver": {
     "golang": {
@@ -23,5 +24,9 @@
       "rootPatterns": [".root", "go.mod"],
       "filetypes": ["go"]
     }
-  }
+  },
+  "tsserver.watchOptions": {
+    "watchFile": "useFsEvents"
+  },
+  "list.source.symbols.excludes": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"]
 }
