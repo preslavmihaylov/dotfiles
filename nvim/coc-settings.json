@@ -25,6 +25,9 @@
       "filetypes": ["go"]
     }
   },
+  "go.goplsOptions": {
+    "staticcheck": true
+  },
   "tsserver.watchOptions": {
     "watchFile": "useFsEvents"
   },
