@@ -15,6 +15,9 @@ alias lvim="vim -u NONE"
 alias vi=nvim
 alias vim=nvim
 
+# go to root of repo
+alias cdr='cd $(git rev-parse --show-toplevel)'
+
 # change default editors for git & similar cli tools
 export VISUAL=nvim
 export EDITOR=nvim
