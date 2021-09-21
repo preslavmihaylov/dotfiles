@@ -2,8 +2,29 @@
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" I always accidentally click these which make me scroll down too much
+nmap <S-Down> <Down>
+nmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Up> <Up>
+imap <S-Down> <Down>
+imap <S-Up> <Up>
+
 " map Ctrl+u to redo
 nnoremap <C-u> :redo<CR>
+
+" map auto-completion
+inoremap <C-e> <C-x><C-o>
 
 " map find/replace with vim-over
 nmap <C-r> :OverCommandLine<CR>%s/
