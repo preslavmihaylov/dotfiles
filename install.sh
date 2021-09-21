@@ -21,13 +21,15 @@ fi
 
 # .bash_aliases install
 cp $MYDIR/bash_aliases ~/.bash_aliases
-if [ -f ~/.zshrc ]; then
-    echo "[ -f ~/.bash_aliases ] && source ~/.bash_aliases" >> ~/.zshrc
-fi
+
+# apply bash aliases for zsh as well
+echo "[ -f ~/.bash_aliases ] && source ~/.bash_aliases" >> ~/.zshrc
+
+# gitmux conf install
 
 # tmux conf install
 cp $MYDIR/tmux.conf ~/.tmux.conf
-cp -r $MYDIR/tmux-gitbar ~/.tmux-gitbar
+cp -r $MYDIR/gitmux ~/.gitmux.conf
 
 # Install coc extensions
 vim -c 'CocInstall -sync coc-json coc-html coc-css coc-tsserver coc-prettier coc-go coc-styled-components coc-graphql|q'
