@@ -1,8 +1,8 @@
 {
   "suggest.noselect": false,
-  "diagnostic.errorSign": "✘",
-  "diagnostic.warningSign": "!",
-  "diagnostic.infoSign": "?",
+  "diagnostic.errorSign": "💥",
+  "diagnostic.warningSign": "🟡",
+  "diagnostic.infoSign": "💡",
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
