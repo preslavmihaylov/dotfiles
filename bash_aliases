@@ -55,8 +55,8 @@ alias gdb_trace="gdb --batch --ex r --ex bt --ex q --args"
 
 # Setup go environment
 PATH=$PATH:/usr/local/go/bin
-PATH=$PATH:~/programming/go/bin
-export GOPATH=$HOME/programming/go
+PATH=$PATH:~/prg/go/bin
+export GOPATH=$HOME/prg/go
 
 export FZF_DEFAULT_OPTS='
 --color fg:252,bg:233,hl:#ff8787,fg+:252,bg+:235,hl+:#ff0000
