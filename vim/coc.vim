@@ -1,8 +1,6 @@
 " TextEdit might fail if hidden is not set.
 set hidden
 
-let g:coc_node_path = '/Users/preslav/.nvm/versions/node/v12.18.0/bin/node'
-
 colorscheme gruvbox
 autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
 autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff

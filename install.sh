@@ -32,6 +32,7 @@ cp $MYDIR/tmux.conf ~/.tmux.conf
 cp -r $MYDIR/gitmux.conf ~/.gitmux.conf
 
 # Install coc extensions
-vim -c 'CocInstall -sync coc-json coc-html coc-css coc-tsserver coc-prettier coc-go coc-styled-components coc-graphql|q'
+vim -c 'CocInstall -sync coc-json coc-html coc-css coc-tsserver coc-prettier coc-go coc-styled-components coc-graphql' +qall
+vim -c 'GoInstallBinaries' +qall
 
 echo "dotfiles finished installing!"
