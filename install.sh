@@ -10,6 +10,8 @@ cp $MYDIR/vimrc ~/.vimrc
 rm -rf ~/.vim || true
 cp -r $MYDIR/vim ~/.vim
 
+mkdir -p ~/.config
+
 # nvim install
 rm -rf ~/.config/nvim || true
 cp -r $MYDIR/nvim ~/.config/nvim
