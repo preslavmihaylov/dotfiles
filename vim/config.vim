@@ -1,8 +1,5 @@
-" Uber stuff
-let $USE_SYSTEM_GO=1
-
 " integrate vim clipboard with system clipboard
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 
 " quickfix window is always at the bottom
 autocmd FileType qf wincmd J
