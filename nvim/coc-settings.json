@@ -1,9 +1,13 @@
 {
   "suggest.noselect": false,
   "diagnostic.errorSign": "💥",
-  "diagnostic.warningSign": "🟡",
+  "diagnostic.warningSign": "❓",
   "diagnostic.infoSign": "💡",
   "diagnostic.checkCurrentLine": true,
+  "sql.lintOnOpen": false,
+  "sql.lintOnChange": false,
+  "sql.lintOnSave": false,
+  "sql.database": "postgresql",
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
@@ -14,15 +18,31 @@
     "javascriptreact",
     "typescript.tsx",
     "graphql",
-    "go"
+    "go",
+    "sql"
   ],
   "javascript.suggestionActions.enabled": false,
-  "coc.preferences.hoverTarget": "float",
   "languageserver": {
+    "terraform": {
+        "command": "terraform-lsp",
+        "filetypes": [
+            "terraform",
+            "tf"
+        ],
+        "initializationOptions": {},
+        "settings": {}
+    },
     "golang": {
       "command": "gopls",
       "rootPatterns": [".root", "go.mod"],
       "filetypes": ["go"]
+    },
+    "golangci-lint-languageserver": {
+      "command": "golangci-lint-langserver",
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "command": ["golangci-lint", "run", "-D", "errcheck", "-E", "revive,godot", "--out-format", "json"]
+      }
     }
   },
   "go.goplsOptions": {
