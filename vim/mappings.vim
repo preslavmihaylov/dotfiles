@@ -27,7 +27,8 @@ nnoremap <C-u> :redo<CR>
 inoremap <C-e> <C-x><C-o>
 
 " map find/replace with vim-over
-nmap <C-r> :OverCommandLine<CR>%s/
+nnoremap <C-r> :OverCommandLine<CR>%s/
+nnoremap <C-R> :OverCommandLine<CR>%s/
 
 " map moving tabs
 nnoremap <C-Up> :tabm +1<CR>
@@ -67,7 +68,7 @@ nnoremap <C-g> :AgNoFiles<CR>
 autocmd FileType markdown nmap <buffer><silent> <C-k> :call mdip#MarkdownClipboardImage()<CR>
 
 " fugitive.vim mappings
-nmap <leader>gb :Gblame<CR>
+nmap <leader>gb :Git blame<CR>
 nmap <leader>gr :Gread<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gd :tabe<CR>:Gdiffsplit<CR>
@@ -84,6 +85,11 @@ autocmd BufEnter *.go nmap <leader>ii  <Plug>(go-implements)
 autocmd BufEnter *.go nmap <leader>ci  <Plug>(go-describe)
 autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
 autocmd BufEnter *.go nmap <leader>cs  <Plug>(go-callstack)
+autocmd BufEnter *.go nmap <leader>i :CocCommand go.impl.cursor<Enter>
+
+" automatically import missing packages in go files
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd BufWritePre *.sql :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>d :CocDiagnostics<CR>

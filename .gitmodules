@@ -58,3 +58,6 @@
 [submodule "vim/bundle/vimspector"]
 	path = vim/bundle/vimspector
 	url = https://github.com/puremourning/vimspector
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/preservim/tagbar.git

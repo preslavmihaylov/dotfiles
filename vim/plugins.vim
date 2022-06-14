@@ -99,6 +99,10 @@ let g:go_jump_to_error = 0
 " run go imports on file save
 let g:go_fmt_command = "goimports"
 
+" disable gofmt on save because coc-go takes care of that
+let g:go_fmt_autosave = 0
+
+
 " vim-go debug: show shell commands being executed
 " let g:go_debug=['shell-commands']
 
@@ -135,3 +139,10 @@ nmap <Leader>di <Plug>VimspectorBalloonEval
 xmap <Leader>di <Plug>VimspectorBalloonEval
 
 let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB', 'vscode-node-debug2' ]
+
+""" -------------------- tagbar -------------------------
+" Show code outline
+
+nmap <F2> :TagbarToggle<CR>
+
+" set updatetime=500
