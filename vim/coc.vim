@@ -1,3 +1,5 @@
+let g:coc_global_extensions = ['coc-solargraph']
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -5,8 +7,11 @@ colorscheme gruvbox
 autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
 autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
 autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
-autocmd ColorScheme * highlight SignColumn guibg=#adadad
+" autocmd ColorScheme * highlight SignColumn guibg=#adadad
+autocmd ColorScheme * highlight SignColumn guibg=#fafafa
 autocmd ColorScheme * highlight CocWarningSign guibg=#ffffff
+
+highlight SignColumn guibg=#fafafa
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -28,10 +33,10 @@ set signcolumn=auto
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort

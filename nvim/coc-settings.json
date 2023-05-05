@@ -13,13 +13,14 @@
     "typescript",
     "typescriptreact",
     "json",
+    "html",
     "css",
     "scss",
     "javascriptreact",
     "typescript.tsx",
     "graphql",
     "go",
-    "sql"
+    "ruby"
   ],
   "javascript.suggestionActions.enabled": false,
   "languageserver": {
@@ -41,7 +42,7 @@
       "command": "golangci-lint-langserver",
       "filetypes": ["go"],
       "initializationOptions": {
-        "command": ["golangci-lint", "run", "-D", "errcheck", "-E", "revive,godot", "--out-format", "json"]
+        "command": ["golangci-lint", "run", "-D", "errcheck", "-E", "revive", "--exclude", "var-naming", "--out-format", "json"]
       }
     }
   },
@@ -51,5 +52,7 @@
   "tsserver.watchOptions": {
     "watchFile": "useFsEvents"
   },
-  "list.source.symbols.excludes": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"]
+  "list.source.symbols.excludes": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"],
+  "solargraph.formatting": true,
+  "solargraph.autoformat": true
 }

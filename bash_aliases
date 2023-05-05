@@ -14,6 +14,8 @@ alias targz_extract="tar -xvf"
 alias lvim="vim -u NONE"
 alias vi=nvim
 alias vim=nvim
+alias v=vim
+alias g=git
 
 # go to root of repo
 alias cdr='cd $(git rev-parse --show-toplevel)'
@@ -23,17 +25,27 @@ export VISUAL=nvim
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 
+alias docker_rmi_all='docker rmi $(docker images -a -q)'
 alias docker_stop_all='docker stop $(docker ps -a -q)'
 alias docker_rm_all='docker rm $(docker ps -a -q)'
 
 alias json_prettify="python -m json.tool"
-countloc() {
+alias loccntgo="loccnt \"*.go\" \"*_test.go\" \"mocks*\" \"vendor*\""
+loccnt() {
     if [ -z $1 ]; then
-        echo "Usage: ${FUNCNAME[0]} <filetype>"
+        echo "Usage: ${FUNCNAME[0]} <included> <excluded>"
         return 
     fi
 
-    find . -name "*.$1" | xargs wc -l
+    excluded=""
+    for i in "${@:2}"; do
+        # old version, which doesn't work. This matches filename patterns only, but doesn't work for filepaths.
+        # excluded="$excluded ! -iname \"$i\""
+        excluded="$excluded ! -path \"$i\""
+    done
+
+    cmd="find . -type f \( -iname \"$1\" $excluded \) | xargs wc -l"
+    eval "$cmd"
 }
 
 if [ $ARCH = 'Darwin' ]; then
@@ -53,8 +65,10 @@ fi
 # run gdb until program bombs & print stack trace
 alias gdb_trace="gdb --batch --ex r --ex bt --ex q --args"
 
-# Setup go environment
 PATH=$PATH:/usr/local/go/bin
+PATH=$PATH:~/scripts
+
+# Go environment
 PATH=$PATH:~/prg/go/bin
 export GOPATH=$HOME/prg/go
 
@@ -74,7 +88,7 @@ fi
 
 NC='\033[0m'
 
-PROMPT_COMMAND='echo -e "${HOST_CLR}$(whoami)@kingslanding${NC}:${DIR_CLR}$(dirs)${NC}"'
+PROMPT_COMMAND='echo -e "${HOST_CLR}$(whoami)@lannisport${NC}:${DIR_CLR}$(dirs)${NC}"'
 PS1='$ '
 
 

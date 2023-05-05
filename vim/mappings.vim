@@ -93,11 +93,12 @@ autocmd BufWritePre *.sql :silent call CocAction('runCommand', 'editor.action.or
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>d :CocDiagnostics<CR>
 nmap <leader>cr <Plug>(coc-references)
+nmap <leader>l :call CocAction('diagnosticNext')<CR>
+nmap <leader>k :call CocAction('diagnosticPrevious')<CR>
  
 " map tag pop and push for all files
 nmap <C-a> <C-o>
 nmap <C-d> <Plug>(coc-definition)
 
 " close all buffers except focused one
-nnoremap <leader>qq :%bd\|e#<CR>
-
+nnoremap <leader>qq <Plug>(coc-float-hide)
