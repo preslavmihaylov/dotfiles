@@ -17,7 +17,7 @@ rm -rf ~/.config/nvim || true
 cp -r $MYDIR/nvim ~/.config/nvim
 
 # alacritty install (sensible for mac only)
-if [ $ARCH = 'Darwin' ]; then
+if [[ $(uname) == "Darwin" ]]; then
     cp -r $MYDIR/alacritty ~/.config/alacritty
 fi
 

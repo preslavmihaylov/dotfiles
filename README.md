@@ -8,6 +8,21 @@ The dotfiles include:
 * custom bash aliases and options
 * the bash scripts I use and have added to PATH
 
+## Installation
+Make sure node version is >= 18.16:
+```
+node --version
+```
+
+Afterwards:
+```
+git clone https://github.com/preslavmihaylov/dotfiles
+cd dotfiles 
+git submodule update --init --recursive
+cd vim/bundle/coc.nvim && yarn install && cd ../../../
+./install.sh
+```
+
 ## Dependencies
 I usually use this as a supplemental repository to my [default-setups](https://github.com/preslavmihaylov/default-setups) repo.  
 In it, you will find a script for installing all the software I use on my Ubuntu machines.  
@@ -29,15 +44,6 @@ These are the tools you will need to, surely, install:
 All of these can be installed using the `apt-get install` utility. If you would like to find the exact commands, check out [default-setups](https://github.com/preslavmihaylov/default-setups)
 
 If you found out I missed a dependency, feel free to submit a PR. :)
-
-## Installation
-
-```
-git clone https://github.com/preslavmihaylov/dotfiles
-cd dotfiles 
-git submodule update --init --recursive
-./install.sh
-```
 
 ## Customizing some options
 These configurations include options, which I use and have found useful.  
