@@ -24,6 +24,10 @@ fi
 # .bash_aliases install
 cp $MYDIR/bash_aliases ~/.bash_aliases
 
+# scripts install
+mkdir -p ~/scripts
+cp -r $MYDIR/scripts/* ~/scripts/*
+
 # apply bash aliases for zsh as well
 echo "[ -f ~/.bash_aliases ] && source ~/.bash_aliases" >> ~/.zshrc
 
