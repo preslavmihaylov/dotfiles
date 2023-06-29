@@ -10,6 +10,10 @@ cp $MYDIR/vimrc ~/.vimrc
 rm -rf ~/.vim || true
 cp -r $MYDIR/vim ~/.vim
 
+# install coc.nvim
+cd ~/.vim/bundle/coc.nvim && yarn install
+cd $MYDIR
+
 mkdir -p ~/.config
 
 # nvim install
