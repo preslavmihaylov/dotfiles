@@ -86,10 +86,12 @@ autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
 autocmd BufEnter *.go nmap <leader>cs  <Plug>(go-callstack)
 autocmd BufEnter *.go nmap <leader>i :CocCommand go.impl.cursor<Enter>
  
-" automatically import missing packages in go files
+" automatically sort/import missing packages in languages I use
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 autocmd BufWritePre *.sql :silent call CocAction('runCommand', 'editor.action.organizeImport')
- 
+autocmd BufWritePre *.ts :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>d :CocDiagnostics<CR>
 nmap <leader>cr <Plug>(coc-references)
