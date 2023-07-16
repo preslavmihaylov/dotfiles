@@ -4,10 +4,13 @@
   "diagnostic.warningSign": "❓",
   "diagnostic.infoSign": "💡",
   "diagnostic.checkCurrentLine": true,
-  "sql.lintOnOpen": false,
-  "sql.lintOnChange": false,
-  "sql.lintOnSave": false,
-  "sql.database": "postgresql",
+  // "sql.lintOnOpen": false,
+  // "sql.lintOnChange": false,
+  // "sql.lintOnSave": false,
+  // "sql.database": "postgresql",
+  "semanticTokens.enable": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "eslint.autoFixOnSave": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
@@ -25,13 +28,10 @@
   "javascript.suggestionActions.enabled": false,
   "languageserver": {
     "terraform": {
-        "command": "terraform-lsp",
-        "filetypes": [
-            "terraform",
-            "tf"
-        ],
-        "initializationOptions": {},
-        "settings": {}
+      "command": "terraform-lsp",
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
     },
     "golang": {
       "command": "gopls",
@@ -42,8 +42,24 @@
       "command": "golangci-lint-langserver",
       "filetypes": ["go"],
       "initializationOptions": {
-        "command": ["golangci-lint", "run", "-D", "errcheck", "-E", "revive", "--exclude", "var-naming", "--out-format", "json"]
+        "command": [
+          "golangci-lint",
+          "run",
+          "-D",
+          "errcheck",
+          "-E",
+          "revive",
+          "--exclude",
+          "var-naming",
+          "--out-format",
+          "json"
+        ]
       }
+    },
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["typescript", "typescriptreact", "graphql"]
     }
   },
   "go.goplsOptions": {
@@ -52,7 +68,11 @@
   "tsserver.watchOptions": {
     "watchFile": "useFsEvents"
   },
-  "list.source.symbols.excludes": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"],
+  "list.source.symbols.excludes": [
+    "**/node_modules/**",
+    "**/node_modules/**/.*",
+    "**/node_modules/**/.*/**"
+  ],
   "solargraph.formatting": true,
   "solargraph.autoformat": true
 }
