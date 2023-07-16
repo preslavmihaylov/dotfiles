@@ -89,10 +89,6 @@ autocmd BufEnter *.go nmap <leader>i :CocCommand go.impl.cursor<Enter>
 " automatically sort/import missing packages in languages I use
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 autocmd BufWritePre *.sql :silent call CocAction('runCommand', 'editor.action.organizeImport')
-" autocmd BufWritePre *.ts :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
-" a workaround to allow me to easily organize imports while not hitting the 'constant updates issue'
-nmap <leader>o :call CocAction('runCommand', 'editor.action.organizeImport')
  
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>d :CocDiagnostics<CR>
