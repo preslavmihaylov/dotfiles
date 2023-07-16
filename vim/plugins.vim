@@ -140,9 +140,17 @@ xmap <Leader>di <Plug>VimspectorBalloonEval
 
 let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB', 'vscode-node-debug2' ]
 
-""" -------------------- tagbar -------------------------
-" Show code outline
+""" -------------------- tagbar/vista.vim -------------------------
+" Show code outline. Vista works for typescript, tagbar for golang.
+" not tested with any other lang as those are the main ones I use.
 
-nmap <F2> :TagbarToggle<CR>
+autocmd BufEnter *.go nmap <F2> :TagbarToggle<CR>
+autocmd BufEnter *.ts nmap <F2> :Vista!!<CR>
+
+" make vista window a bit bigger
+let g:vista_sidebar_width=35
+
+" don't display symbol info while in Vista window
+let g:vista_cursor_delay=1000000
 
 " set updatetime=500
