@@ -67,3 +67,9 @@
 [submodule "vim/bundle/tagalong.vim"]
 	path = vim/bundle/tagalong.vim
 	url = https://github.com/AndrewRadev/tagalong.vim.git
+[submodule "vim/bundle/nvim-treesitter"]
+	path = vim/bundle/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "vim/bundle/nvim-treesitter-context"]
+	path = vim/bundle/nvim-treesitter-context
+	url = https://github.com/nvim-treesitter/nvim-treesitter-context
