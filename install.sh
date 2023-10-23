@@ -39,6 +39,9 @@ echo "[ -f ~/.bash_aliases ] && source ~/.bash_aliases" >> ~/.zshrc
 cp $MYDIR/tmux.conf ~/.tmux.conf
 cp -r $MYDIR/gitmux.conf ~/.gitmux.conf
 
+# setup default eslint config
+cp $MYDIR/eslintrc.yaml ~/.eslintrc.yaml
+
 # Install coc extensions
 vim -c 'CocInstall -sync coc-json coc-html coc-css coc-tsserver coc-prettier coc-go coc-styled-components coc-graphql coc-sql' +qall
 vim -c 'GoInstallBinaries' +qall
